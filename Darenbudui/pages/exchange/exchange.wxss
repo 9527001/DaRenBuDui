@@ -1,0 +1,77 @@
+/* pages/exchange/exchange.wxss */
+
+.list {
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.singleTrade {
+  width: 340rpx;
+  background: #fff;
+  /* padding: 20rpx; *//* display: flex; */
+  border-bottom: 10rpx solid #f5f5f5;
+}
+
+.item-press {
+  background: #fafafa;
+  /* padding: 20rpx; *//* display: flex; */
+  border-bottom: 20rpx solid #fafafa;
+}
+
+.img {
+  margin: 10rpx;
+  /* width: 100%; */
+  width: 320rpx;
+  height: 320rpx;
+  /* overflow: cli; */
+  border-radius: 10rpx;
+}
+
+.name {
+  font-size: 33rpx;
+  margin: 20rpx;
+}
+
+.inventory {
+  font-size: 22rpx;
+  margin: 20rpx;
+  color: lightgray;
+}
+
+.b {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20rpx;
+  align-items: center;
+}
+
+.b-icon {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.price {
+  margin-left: 5rpx;
+  font-size: 11pt;
+  color: #f63;
+  font-weight: 700;
+}
+
+.exchange {
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx;
+}
+
+.exchange button {
+  border-radius: 44rpx;
+  background-color: #f63;
+  color: white;
+  font-size: 28rpx;
+}

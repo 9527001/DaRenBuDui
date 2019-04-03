@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/activity/activity",
+    "pages/exchange/exchange",
+    "pages/my/my",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "达人步兑",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#ff6633",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "res/home_main_0.png",
+        "selectedIconPath": "res/home_main_1.png"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "活动",
+        "iconPath": "res/home_activity_0.png",
+        "selectedIconPath": "res/home_activity_1.png"
+      },
+      {
+        "pagePath": "pages/exchange/exchange",
+        "text": "兑换",
+        "iconPath": "res/home_exchange_0.png",
+        "selectedIconPath": "res/home_exchange_1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "res/home_my_0.png",
+        "selectedIconPath": "res/home_my_1.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+<view class="home">
+  <view class='top'>
+    <image class='top-bg' src='../../res/bg-index.png'></image>
+    <view class='all-step'>
+      <image src='../../res/logo-top-left.png'></image>
+      <text>67.39</text>
+    </view>
+    <view class='today-step'>
+      <image src='../../res/step-top-right.png'></image>
+      <text>6739</text>
+    </view>
+    <view class='new-step'>
+      <image src='../../res/bubble-bg.png'></image>
+      <text>0.39</text>
+    </view>
+    <image class='top-people' src='../../res/people.gif'></image>
+  </view>
+  <view class='more'>
+    <block wx:for='{{itemArr}}'>
+      <!-- data-*属性在触发事件时获取  -->
+      <view class='more-item' bindtap='onclickitem' data-id='{{item.id}}'>
+        <!-- 图片 -->
+        <image src='{{item.img ? item.img : "../../res/activity-2.png"}}' class='more-img' mode='aspectFill' />
+        <!-- 标题 -->
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color='#ff0000' indicator-color='#f5f5f5'>
+      <block wx:for="{{bannerArr}}">
+        <swiper-item class="swiper-item">
+          <image src="{{item.url}}" class="slide-image" model="aspectFit" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='title'>
+    <image src='../../res/shop-title.png' mode="aspectFit"></image>
+    <!-- <image src='../../res/shop-title.png' mode="aspectFit"></image> -->
+  </view>
+
+  <view class='product'>
+    <view class='list'>
+      <block wx:for='{{tradeList}}'>
+        <!-- data-*属性在触发事件时获取  -->
+        <view class='singleTrade' hover-class='item-press' data-id='{{item.goodsId}}'>
+          <!-- 商品图片 -->
+          <image src='{{item.img ? item.img : "../../res/activity-2.png"}}' class='img' mode='aspectFill' />
+          <!-- 商品名字 -->
+          <view class='name'>{{item.name}}</view>
+          <!-- 库存 -->
+          <view class='inventory'>剩余{{item.stock}}件</view>
+          <!-- 价格 -->
+          <view class='b'>
+            <image src='../../res/icons_06.png' class='b-icon' catchtap='deleteCollection' data-pos='{{index}}' />
+            <view class='price'>{{item.price}}币+￥{{item.discount_price}}</view>
+          </view>
+          <view class='exchange'>
+            <button bindtap="clickOnExchange">免费兑换</button>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

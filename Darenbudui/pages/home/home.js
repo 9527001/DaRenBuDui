@@ -1,4 +1,7 @@
 // pages/home/home.js
+
+var netUtil = require("../../common/netutil/netutil.js");
+//require引入
 const order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({
 
@@ -7,15 +10,8 @@ Page({
    */
   data: {
     mode: "scaleToFit",
-    bannerArr: [{
-        url: '../../res/activity-2.png'
-      },
-      {
-        url: '../../res/activity-2.png'
-      }
-    ],
     indicatorDots: true,
-    autoplay: false,
+    autoplay: true,
     interval: 2000,
     duration: 1000,
     // circular:true,
@@ -55,6 +51,7 @@ Page({
    */
   onLoad: function(options) {
     this.refreshData();
+    this.getBannerList();
   },
 
   /**
@@ -110,7 +107,7 @@ Page({
     var id = event.currentTarget.dataset.id;
     wx.showToast({
 
-      title: event.currentTarget.dataset.id+ '',
+      title: event.currentTarget.dataset.id + '',
     })
   },
 
@@ -121,33 +118,29 @@ Page({
   },
   // 网络请求
   http() {
+    netUtil.request_param("pointgoodslist", {
+      type: 1,
+      page: this.currentPage,
+      position: 2,
+    }, res => {
+      this.setData({
+        tradeList: res.data
+      })
 
-    wx.request({
-      url: 'http://base.weiyingjia.org/api/base/pointgoodslist',
-      data: {
-        type: 1,
-        page: this.currentPage,
-        position: 2,
-      },
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {
-        'content-type': 'application/json'
-      }, // 设置请求的 header
-      success: res => {
-
-        console.log('请求成功' + res.data.data);
-        this.setData({
-          tradeList: res.data.data
-        })
-
-      },
-      fail: function() {
-        console.log('请求失败');
-      },
-      complete: function() {
-        // complete
-        console.log('请求完成');
-      },
     })
+  
+  },
+  
+  getBannerList() {
+    netUtil.request("banners", res => {
+
+      console.log('请求成功' + res.data);
+      console.log('请求成功' + res.data.data);
+      this.setData({
+        bannerArr: res.data
+      })
+
+    }, )
+    
   }
 })

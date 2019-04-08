@@ -20,8 +20,8 @@
   position: absolute;
   left: 20rpx;
   top: 20rpx;
-  width: 225rpx;
-  height: 94rpx;
+  width: 226rpx;
+  height: 95rpx;
 }
 .all-step image {
   width: 100%;

@@ -4,7 +4,8 @@
     "pages/activity/activity",
     "pages/exchange/exchange",
     "pages/my/my",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/sign-in/sign-in"
   ],
   "window": {
     "backgroundTextStyle": "light",

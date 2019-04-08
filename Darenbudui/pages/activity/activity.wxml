@@ -4,7 +4,7 @@
     <!-- data-*属性在触发事件时获取  -->
     <view class='singleTrade' bindtap='onclickAd' data-id='{{item.id}}' data-item='{{item}}'>
       <!-- 商品图片 -->
-      <image src='{{item.img ? item.img : "../../res/activity-2.png"}}' class='ad-image' mode='aspectFill' />
+      <image src='{{item.img ? item.img : "../../res/activity-2.png"}}'    class='ad-image' mode='aspectFill' />
     </view>
   </block>
 </view>

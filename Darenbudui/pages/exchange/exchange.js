@@ -1,21 +1,22 @@
 // pages/exchange/exchange.js
+var netUtil = require("../../common/netutil/netutil.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tradeList: [{
-      img: '../../res/activity-3.png',
-      name: '晴雨伞',
-      stock: '10',
-      price: '111',
-    }, {
-      img: '../../res/activity-2.png',
-      name: '纸巾/箱',
-      stock: '10',
-      price: '111',
-    }],
+    // tradeList: [{
+    //   img: '../../res/activity-3.png',
+    //   name: '晴雨伞',
+    //   stock: '10',
+    //   price: '111',
+    // }, {
+    //   img: '../../res/activity-2.png',
+    //   name: '纸巾/箱',
+    //   stock: '10',
+    //   price: '111',
+    // }],
 
   },
 
@@ -103,32 +104,16 @@ Page({
   // 网络请求
   http() {
 
-    wx.request({
-      url: 'http://base.weiyingjia.org/api/base/pointgoodslist',
-      data: {
-        type: 1,
-        page: this.currentPage,
-        position: 2,
-      },
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {
-        'content-type': 'application/json'
-      }, // 设置请求的 header
-      success: res => {
+    netUtil.request_param("pointgoodslist", {
+      type: 1,
+      page: this.currentPage,
+      position: 2,
+    }, res => {
+      this.setData({
+        tradeList: res.data
+      })
 
-        console.log('请求成功' + res.data.data);
-        this.setData({
-          tradeList: res.data.data
-        })
-
-      },
-      fail: function() {
-        console.log('请求失败');
-      },
-      complete: function() {
-        // complete
-        console.log('请求完成');
-      },
     })
+   
   }
 })

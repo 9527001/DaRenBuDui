@@ -1,13 +1,14 @@
 <!--pages/my/my.wxml-->
-<scroll-view class='scroll-view' scroll-y="true" style="height: 1500rpx;">
+<scroll-view class='scroll-view' scroll-y="true" style="height: 1000rpx;">
 
   <view class='my'>
     <!-- 顶部 -->
     <view class='top'>
       <image class='top-bg' src='../../res/my-top-bg.png'></image>
       <view class='name'>
-        <text class='nickname'>{{nickname ? nickname : "未知"}}</text>
-        <text class='phone'>{{phonenumber}}</text>
+        <text class='nickname'>{{userInfo.nickName ? userInfo.nickName : "点击获取昵称"}}</text>
+        <button class='phone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >{{userInfo.phoneNumber ? userInfo.phoneNumber : "点击获取手机号码"}}</button>
+        
       </view>
       <view class='data'>
         <view class='money'>
@@ -19,7 +20,7 @@
           <text class='money-title'>累计天数</text>
         </view>
       </view>
-      <image class='icon' src='{{iconurl ? iconurl : "../../res/activity-2.png"}}' mode='aspectFill'></image>
+      <image class='icon' src='{{userInfo.avatarUrl ? userInfo.avatarUrl : "../../res/activity-2.png"}}' mode='aspectFill'></image>
     </view>
 
     <!-- 中间标签 -->

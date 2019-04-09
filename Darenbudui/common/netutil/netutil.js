@@ -31,14 +31,19 @@ function request(url, params, method, onStart, onSuccess, onFailed) {
   if (onStart) {
     onStart(); //request start
   }
-
+var token = wx.getStorageInfo({
+  success: function(res) {
+    token =  res.token;
+  },
+})
   wx.request({
 
     url: 'http://clock.weiyingjia.org/api/base/' + url,
     data: dealParams(params),
     method: method,
     header: {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      'Authorization': "Bearer" + token,
     },
     success: function(res) {
       if (res.data) {

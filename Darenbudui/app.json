@@ -5,7 +5,12 @@
     "pages/exchange/exchange",
     "pages/my/my",
     "pages/logs/logs",
-    "pages/sign-in/sign-in"
+    "pages/sign-in/sign-in",
+    "pages/sign-in-rules/sign-in-rules",
+    "pages/mycard/mycard",
+    "pages/cardtofriend/cardtofriend",
+    "pages/cardtofriendRecord/cardtofriendRecord",
+    "pages/cardtomoney/cardtomoney"
   ],
   "window": {
     "backgroundTextStyle": "light",

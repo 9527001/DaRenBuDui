@@ -27,6 +27,7 @@ App({
               console.log("index.js wx.request CheckCallUser statusCode" + res.statusCode);
 
             }
+            console.log('登录返回数据',res)
 
             let data = res.data.data;
             wx.setStorage({

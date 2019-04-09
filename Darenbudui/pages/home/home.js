@@ -102,12 +102,24 @@ Page({
   onShareAppMessage: function() {
 
   },
-
+  // 四个按钮点击
   onclickitem: function(event) {
     var id = event.currentTarget.dataset.id;
-    wx.showToast({
+    switch (id) {
+      case 0:
+        this.toSignIn();
+        break;
+      default:
+        wx.showToast({
+          title: event.currentTarget.dataset.id + '',
+        })
+        break;
+    }
 
-      title: event.currentTarget.dataset.id + '',
+  },
+  toSignIn(){
+    wx.navigateTo({
+      url: '../../pages/sign-in/sign-in',
     })
   },
 
@@ -128,9 +140,9 @@ Page({
       })
 
     })
-  
+
   },
-  
+
   getBannerList() {
     netUtil.request("banners", res => {
 
@@ -141,6 +153,6 @@ Page({
       })
 
     }, )
-    
+
   }
 })

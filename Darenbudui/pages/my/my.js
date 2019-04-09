@@ -1,4 +1,5 @@
 // pages/my/my.js
+var netUtil = require("../../common/netutil/netutil.js");
 Page({
 
   /**
@@ -42,14 +43,36 @@ Page({
       id: 0,
       img: '../../res/my-setting.png',
       name: '设置',
-    },],
+    }, ],
+
+    //用户个人信息
+    userInfo: {
+      avatarUrl: "", //用户头像
+      nickName: "", //用户昵称
+      phoneNumber: "", //用户手机号
+    }
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    /**
+     * 获取用户信息
+     */
+    wx.getUserInfo({
+      success: res => {
+        console.log('获取用户信息', res);
+        var avatarUrl = 'userInfo.avatarUrl';
+        var nickName = 'userInfo.nickName';
+        this.setData({
+          [avatarUrl]: res.userInfo.avatarUrl,
+          [nickName]: res.userInfo.nickName,
+        })
+      }
+    });
+    
   },
 
   /**
@@ -100,38 +123,39 @@ Page({
   onShareAppMessage: function() {
 
   },
-  onClickItem:function(event) {
+  onClickItem: function(event) {
     var ID = event.currentTarget.dataset.id;
     switch (ID) {
       case 1:
         {
           wx.showShareMenu({
-            withShareTicket:true
+            withShareTicket: true
           });
         }
         break;
       case 3:
-      {
-        this.chooseAddress();
-      }
-      break;
-      default:break;
+        {
+          this.chooseAddress();
+        }
+        break;
+      default:
+        break;
     }
   },
 
 
-// 获取地址
+  // 获取地址
   chooseAddress() {
     wx.chooseAddress({
       success: (res) => {
-        console.log('获取地址成功：',res);
+        console.log('获取地址成功：', res);
         this.setData({
           addressInfo: res
-          
+
         })
       },
-      fail: function (err) {
-        console.log('获取地址失败：',err)
+      fail: function(err) {
+        console.log('获取地址失败：', err)
       }
     })
   },
@@ -140,12 +164,36 @@ Page({
   onClickSetting() {
     wx.openSetting({
       success(res) {
-        console.log( '获取设置权限',res);
+        console.log('获取设置权限', res);
         // res.authSetting = {
         //   "scope.userInfo": true,
         //   "scope.userLocation": true
         // }
       }
     })
-  }
+  },
+  // 获取手机号
+  getPhoneNumber: function (e) {
+    var phoneNumber = 'userInfo.phoneNumber';
+    console.log('微信手机号信息',e);
+    this.setData({
+       
+      [phoneNumber]: '18513119750', 
+      
+    })
+
+    // session	string
+    // iv	string
+    // encryptData	string	
+    netUtil.request_param("get-user-phone", {
+      session: '',
+      iv: e.detail.iv,
+      encryptData: e.detail.encryptData,
+    }, res => {
+      this.setData({
+        tradeList: res.data
+      })
+    })
+  },
+    
 })

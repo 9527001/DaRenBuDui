@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.4",
-	"appid": "wx65c693fbd0dac2f8",
+	"appid": "wx64779b4d01cbf16d",
 	"projectname": "DaRenBuDui",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -47,16 +47,45 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "我的首页",
+					"id": 1,
+					"name": "我的",
 					"pathName": "pages/my/my",
 					"query": "",
 					"scene": null
 				},
 				{
+					"id": 2,
+					"name": "签到",
+					"pathName": "pages/sign-in/sign-in",
+					"query": "",
+					"scene": null
+				},
+				{
 					"id": -1,
-					"name": "我的首页",
-					"pathName": "pages/my/my",
+					"name": "签到规则",
+					"pathName": "pages/sign-in-rules/sign-in-rules",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的卡牌",
+					"pathName": "pages/mycard/mycard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "卡牌送朋友",
+					"pathName": "pages/cardtofriend/cardtofriend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "卡牌送朋友+历史记录",
+					"pathName": "pages/cardtofriendRecord/cardtofriendRecord",
+					"query": "",
 					"scene": null
 				}
 			]

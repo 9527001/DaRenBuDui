@@ -1,2 +1,52 @@
 <!--pages/sign-in/sign-in.wxml-->
-<text>pages/sign-in/sign-in.wxml</text>
+
+<view class='sign-in'>
+  <text class='rule' bindtap='onClickSignInRules'>签到规则</text>
+  <label class='signed-supplement'>2天可以补签</label>
+  <view class='status'>
+    <view class='status-label'>
+      <text class='number'>1天</text>
+      <text class='note'>连续天数</text>
+    </view>
+    <text class='sign-in-button'>已签</text>
+    <view class='status-label'>
+      <text class='number'>2号</text>
+      <text class='note'>今日卡牌</text>
+    </view>
+  </view>
+  <view class='calendar'>
+    <block wx:for='{{calendarList}}' wx:key="value">
+
+      <view class='calendarItem' data-item='{{item}}' bindtap='onClickCalendar'>
+
+        <view class='bu' wx:if="{{item.status==2}}">
+
+          <image src='../../res/sign-in/sign-in-icon-bu.png'></image>
+
+        </view>
+        <view wx:elif="{{item.status==1}}" class='signed'>
+          <image src='../../res/sign-in/singn-icon-sign-bg.png'></image>
+          <view class='signed-content'>
+            <text>{{item.value}}</text>
+            <image src='../../res/sign-in/sign-in-icon-sign.png'></image>
+          </view>
+        </view>
+        <view class='normal' wx:else>
+
+          <text>{{item.value}}</text>
+
+        </view>
+
+      </view>
+    </block>
+  </view>
+  <!-- 我的卡牌 -->
+  <image class='card' bindtap='onClickMyCard' src='../../res/sign-in/sign-in-btn-my-card.png'></image>
+  <!-- 背景图片 -->
+  <image class='bg-image' src='../../res/sign-in/sign-in-bg0.png' mode='aspectFill'></image>
+  <!-- 底部背景图片 -->
+  <image class='bg-image-bottom' src='../../res/sign-in/sign-in-bg1-X.png'></image>
+  <supplement id='supplement' content='{{"是否花费" + supplementMoney+ "步补签"}}' bind:onclickConfirm='clickConfirm'></supplement>
+
+
+</view>

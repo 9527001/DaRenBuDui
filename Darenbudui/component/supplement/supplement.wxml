@@ -1,0 +1,18 @@
+<!--component/supplement/supplement.wxml-->
+
+<view class='mask-container' hidden='{{isHiddenMask}}'>
+  <view class='model-mask' bindtap='onMaskClick' catchtouchmove='preventTouchMove'></view>
+  <view class='model-dialog' catchtouchmove='preventTouchMove'>
+    <image class='title-bg' src='../../res/sign-in/sign-in-popup-t-bg.png'></image>
+    <view class='title-view'>
+      <text class='model-title'>{{title}}</text>
+    </view>
+    <view class='extra'>
+      <text class='model-content'>{{content}}</text>
+      <view class='model-footer'>
+      <text class='cancle' bindtap='onClickCancle'>{{cancletext}}</text>
+      <text class='confirm' bindtap='onClickConfirm'>{{confirmtext}}</text>
+        </view>
+    </view>
+  </view>
+</view>

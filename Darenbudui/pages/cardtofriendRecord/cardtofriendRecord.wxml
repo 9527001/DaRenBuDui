@@ -1,0 +1,24 @@
+<!--pages/cardtofriendRecord/cardtofriendRecord.wxml-->
+<view class='main'>
+  <view class='note'>{{note}}</view>
+  <input placeholder='{{title}}' class='input' type='number'></input>
+  <view class='next'>{{buttonTitle}}</view>
+  <view class='core'>
+    <view class='detailTitle'>{{detailTitle}}</view>
+    <view class='divline'></view>
+    <view class='record'>
+      <block wx:for='{{recordList}}' wx:key='id'>
+        <view class='item' data-id='{{item.id}}' bindtap='didSelectedIitem'>
+          <view class='itemcore'>
+            <view class='left'>
+              <view class='phone'>{{item.phone}}</view>
+              <view class='time'>{{item.time}}</view>
+            </view>
+            <view class='giving'>{{giving}}</view>
+          </view>
+          <view class='itemdivline'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

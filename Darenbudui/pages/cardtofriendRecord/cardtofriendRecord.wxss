@@ -1,0 +1,116 @@
+/* pages/cardtofriendRecord/cardtofriendRecord.wxss */
+.main {
+  background-color: #f5f5f5;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.note {
+  position: relative;
+  /* width: 100%; */
+  /* margin: 48rpx; */
+  padding: 48rpx;
+  font-size: 24rpx;
+  color: #9a979b;
+}
+.input {
+  width: 100%;
+  height: 100rpx;
+  padding-left: 48rpx;
+  font-size: 30rpx;
+  background-color: white;
+}
+
+.next {
+  position: relative;
+  top: 40rpx;
+  width: 560rpx;
+  margin-bottom: 40rpx;
+  left: 50%;
+  margin-left: -280rpx;
+  height: 80rpx;
+  color: white;
+  background-color: #e4e1e5;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+.core {
+  position: relative;
+  top: 40rpx;
+  width: 100%;
+  background-color: white;
+}
+
+.detailTitle {
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 48rpx;
+  color: #151319;
+  font-size: 30rpx;
+}
+
+.divline {
+  width: 100%;
+  height: 1rpx;
+  background: #e8e5e9;
+}
+.record {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  width: 100%;
+  height: 120rpx;
+  
+  
+}
+.item .itemcore {
+  width: 100%;
+  height: 119rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item .itemcore .left {
+  margin-left: 32rpx;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.item .itemcore .left .phone {
+  font-size: 28rpx;
+  color: #151319;
+}
+.item .itemcore .left .time {
+  font-size: 24rpx;
+  color: #a4a0a5;
+}
+
+.item .itemcore .giving {
+  margin-right: 32rpx;
+  font-size: 28rpx;
+  color: #a09ca0;
+  height: 50rpx;
+  width: 120rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius:25rpx;
+  border: 2rpx solid #9f9ca0;
+}
+.item .itemdivline {
+  background-color: #f5f5f5;
+  bottom: 0rpx;
+  margin-left: 32rpx;
+  margin-right: 0rpx;
+  height: 2rpx;
+}
+
+
+

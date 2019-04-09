@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -86,6 +86,19 @@
 					"name": "卡牌送朋友+历史记录",
 					"pathName": "pages/cardtofriendRecord/cardtofriendRecord",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "送卡牌给朋友",
+					"pathName": "pages/cardtofriend/cardtofriend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "送卡兑换达人币",
+					"pathName": "pages/cardtomoney/cardtomoney",
 					"scene": null
 				}
 			]

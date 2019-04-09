@@ -1,2 +1,24 @@
 <!--pages/cardtomoney/cardtomoney.wxml-->
-<text>pages/cardtomoney/cardtomoney.wxml</text>
+<view class='main'>
+  <view class='note'>{{note}}</view>
+    <view class='core'>
+    <view class='detailTitle'>请选择兑换数量</view>
+    <view class='divline'></view>
+    <view class='record'>
+      <block wx:for='{{list}}' wx:key='id'>
+        <view class='item' data-id='{{item.id}}' bindtap='didSelectedIitem'>
+          <view class='itemcore'>
+            <view class='left'>
+              <image class='image' src='{{item.image}}'></image>
+              <view class='phone'>{{item.name}}</view>
+              <view class='time'>{{item.num}}</view>
+            </view>
+            <view class='giving'>{{giving}}</view>
+          </view>
+          <view class='itemdivline'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='cardto' bindtap='onClickCardTo'>立即兑换</view>
+</view>

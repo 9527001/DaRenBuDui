@@ -1,1 +1,30 @@
 <!--pages/cardtofriend/cardtofriend.wxml-->
+<view class='main'>
+  <view class='top'>
+    <image src='../../res/activity-2.png'></image>
+    <text class='nickmame'>Spensper</text>
+    <text class='phone'>135****7053</text>
+  </view>
+  <view class='core'>
+    <view class='detailTitle'>请选择需要赠送的卡牌</view>
+    <view class='divline'></view>
+    <view class='record'>
+      <block wx:for='{{list}}' wx:key='id'>
+        <view class='item' data-id='{{item.id}}' bindtap='didSelectedIitem'>
+          <view class='itemcore'>
+            <view class='left'>
+              <image class='image' src='{{item.image}}'></image>
+              <view class='phone'>{{item.name}}</view>
+              <view class='time'>{{item.num}}</view>
+            </view>
+            <view class='giving'>{{giving}}</view>
+          </view>
+          <view class='itemdivline'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='cardto' bindtap='onClickCardTo'>立即赠送</view>
+  <!-- 卡牌赠送成功提示 -->
+  <cardtosuccess id='cardtosuccess' content='您已成功送出卡牌' bind:onclickConfirm='clickConfirm'></cardtosuccess>
+</view>

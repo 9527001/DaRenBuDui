@@ -6,7 +6,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goldcard: 2,
+    silvercard: 3,
+    note: '你已集齐x组黄金卡牌,y组白银卡牌。每组黄金卡牌兑换2个达人币，每组白银卡牌兑换1个达人币',
+    list: [{
+      id: 0,
+      image: '../../res/sign-in/sign-in-card-x1.png',
+      name: '黄金卡牌',
+      num: '共1张',
+    },
+    {
+      id: 0,
+      image: '../../res/sign-in/sign-in-card-x2.png',
+      name: '白银卡牌',
+      num: '共1张',
+    },
+    ],
   },
 
   /**

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "cardtosuccess": "../../component/cardtosuccess/cardtosuccess/"
+  },
   "navigationBarTitleText": "送卡牌给朋友"
 }

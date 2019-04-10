@@ -1,0 +1,11 @@
+<!--pages/rankinglistrule/rankinglistrule.wxml-->
+<view class='main'>
+  <image class='bg' src='../../res/rankinglist/rankinglist-rule-bg.png'></image>
+  <view class='core'>
+    <image src='../../res/rankinglist/rankinglist-rule-title.png'></image>
+    <view class='text'>
+      达人币排行规则更新中。。。达人币排行规则更新中。。。达人币排行规则更新中。。。达人币排行规则更新中。。。达人币排行规则更新中。。。达人币排行规则更新中。。。达人币排行规则更新中。。。
+    </view>
+    <view class='igotit'>我知道了</view>
+  </view>
+</view>

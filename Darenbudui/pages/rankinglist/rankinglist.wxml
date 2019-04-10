@@ -1,0 +1,43 @@
+<!--pages/rankinglist/rankinglist.wxml-->
+<view class='main'>
+  <image class='bg' src='../../res/rankinglist/rankinglist-bg.png'></image>
+  <view class='main-core'>
+    <!-- 顶部 -->
+    <view class='top'>
+      <image class='top-bg' src='../../res/rankinglist/rankinglist-coin-rank.png' mode='aspectFill'></image>
+      <view class='rule' bindtap='onClickRule'>活动规则</view>
+      <view class='content'>
+        <text class='ranking'>{{ranking}}</text>
+        <image class='avtarurl' src='{{avtarurl}}' mode='aspectFit'></image>
+        <text class='name'>{{name}}</text>
+        <rich-text class='money'>{{money}}币</rich-text>
+      </view>
+    </view>
+    <!-- 中部 -->
+    <view class='middle'>
+      <block wx:for="{{prizelist}}" wx:key="item.id">
+        <view class="{{item.rank==1 ?'gold':''}}">
+          <view class='middle-core'>
+            <image class='hat' src='{{item.hat}}'></image>
+            <image class='icon' src='{{item.header}}'></image>
+            <text class='name'>{{item.username}}</text>
+            <view class='money'>{{item.num}}币</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 底部 -->
+    <view class='core'>
+      <block wx:for='{{list}}' wx:key='id'>
+        <view class='item' data-id='{{item.id}}'>
+          <view class='left'>
+            <text class='ranking'>{{item.rank}}</text>
+            <image class='avtarurl' src='{{item.header}}' mode='aspectFit'></image>
+            <text class='name'>{{item.username}}</text>
+          </view>
+          <view class='money'>{{item.num}}币</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

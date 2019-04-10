@@ -1,4 +1,5 @@
 //app.js
+
 App({
   onLaunch: function() {
     // 展示本地存储能力
@@ -10,9 +11,30 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+
         console.log('获取微信信息' + res.code);
+        // var netUtil = require("../../common/netutil/netutil.js");
+        // netUtil.reqest_post_param("minicode", {
+        //   tcode: res.code
+        // }, res => {
+        //   console.log('首页返回数据处理',res);
+        //   if (res.statusCode == 200) {
+        //     console.log(res);
+        //   } else {
+        //     console.log("index.js wx.request CheckCallUser statusCode" + res.statusCode);
+
+        //   }
+        //   console.log('登录返回数据', res)
+
+        //   let data = res.data.data;
+        //   wx.setStorage({
+        //     key: 'token',
+        //     data: data['token'],
+        //   })
+
+        // })
         wx.request({
-          url: 'http://base.weiyingjia.org/api/base/minicode',
+          url: 'http://clock.weiyingjia.org' + '/api/base/minicode',
           data: {
             code: res.code
           },
@@ -21,19 +43,20 @@ App({
             'content-type': 'application/json'
           }, // 设置请求的 header
           success: function(res) {
-            if (res.statusCode == 200) {
-              console.log(res);
-            } else {
-              console.log("index.js wx.request CheckCallUser statusCode" + res.statusCode);
+                 console.log('首页返回数据处理',res);
+          if (res.statusCode == 200) {
+            console.log(res);
+          } else {
+            console.log("index.js wx.request CheckCallUser statusCode" + res.statusCode);
 
-            }
-            console.log('登录返回数据',res)
+          }
+          console.log('登录返回数据', res)
 
-            let data = res.data.data;
-            wx.setStorage({
-              key: 'token',
-              data: data['token'],
-            })
+          let data = res.data.data;
+          wx.setStorage({
+            key: 'token',
+            data: data['token'],
+          })
           },
           fail: function() {
             console.log("index.js wx.request CheckCallUser fail");
@@ -42,13 +65,7 @@ App({
             // complete
           },
         })
-      },
-      fail: function() {
-        console.log('登录时网络错误');
-      },
-      complete: function() {
-        console.log('登录完成');
-      },
+      }, 
     })
     // 获取用户信息
     wx.getSetting({
@@ -72,6 +89,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    baseUrl: "http://clock.weiyingjia.org",  // 网络接口全局变量
   }
 })

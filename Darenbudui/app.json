@@ -10,7 +10,9 @@
     "pages/mycard/mycard",
     "pages/cardtofriend/cardtofriend",
     "pages/cardtofriendRecord/cardtofriendRecord",
-    "pages/cardtomoney/cardtomoney"
+    "pages/cardtomoney/cardtomoney",
+    "pages/rankinglist/rankinglist",
+    "pages/rankinglistrule/rankinglistrule"
   ],
   "window": {
     "backgroundTextStyle": "light",

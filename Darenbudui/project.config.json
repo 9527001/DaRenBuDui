@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -99,6 +99,20 @@
 					"id": -1,
 					"name": "送卡兑换达人币",
 					"pathName": "pages/cardtomoney/cardtomoney",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/rankinglist/rankinglist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "排行榜活动规则",
+					"pathName": "pages/rankinglistrule/rankinglistrule",
 					"scene": null
 				}
 			]

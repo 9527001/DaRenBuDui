@@ -109,6 +109,9 @@ Page({
       case 0:
         this.toSignIn();
         break;
+      case 1:
+        this.toRankinglist();
+        break;
       default:
         wx.showToast({
           title: event.currentTarget.dataset.id + '',
@@ -117,9 +120,15 @@ Page({
     }
 
   },
-  toSignIn(){
+  toSignIn() {
     wx.navigateTo({
       url: '../../pages/sign-in/sign-in',
+    })
+  },
+  toRankinglist() {
+    wx.navigateTo({
+      url: '../../pages/rankinglist/rankinglist',
+    
     })
   },
 
@@ -140,7 +149,6 @@ Page({
       })
 
     })
-
   },
 
   getBannerList() {

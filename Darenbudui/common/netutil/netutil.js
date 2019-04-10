@@ -6,6 +6,12 @@ function get_param(url, param, onSuccess) {
   request(url, param, "GET", null, onSuccess, null);
 }
 
+function post_param(url, param, onSuccess) {
+  request(url, param, "POST", null, onSuccess, null);
+}
+
+
+
 
 function post(url, param, onStart, onSuccess, onFailed) {
   request(url, params, "POST", onStart, onSuccess, onFailed);
@@ -31,14 +37,19 @@ function request(url, params, method, onStart, onSuccess, onFailed) {
   if (onStart) {
     onStart(); //request start
   }
-var token = wx.getStorageInfo({
-  success: function(res) {
-    token =  res.token;
-  },
-})
+
+  var token = wx.getStorage({
+    key: 'token',
+    success: function(res) {
+      console.log('token', res);
+      token = res.data;
+    },
+  })
+
+
   wx.request({
 
-    url: 'http://clock.weiyingjia.org/api/base/' + url,
+    url: getApp().globalData.baseUrl + '/api/base/' + url,
     data: dealParams(params),
     method: method,
     header: {
@@ -56,7 +67,7 @@ var token = wx.getStorageInfo({
     },
     complete: function(res) {
       // complete
-      console.log('http://clock.weiyingjia.org/api/base/' + url + '  请求结束', res.data, JSON.stringify(res.data));
+      console.log('http://clock.weiyingjia.org/api/base/' + url + 'token' + token + '  请求结束', res.data, JSON.stringify(res.data));
 
     },
 
@@ -74,6 +85,7 @@ function dealParams(params) {
 module.exports = {
   request: get_simple,
   request_param: get_param,
+  reqest_post_param: post_param,
   postRequest: post,
   getRequest: get,
 }

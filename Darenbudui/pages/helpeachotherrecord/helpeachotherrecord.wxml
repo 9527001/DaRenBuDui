@@ -1,0 +1,17 @@
+<!--pages/helpeachotherrecord/helpeachotherrecord.wxml-->
+<view class='main'>
+  <view class='top'>
+    <text class='people'>互助人</text>
+    <text class='people'>互助步数</text>
+    <text class='people'>时间</text>
+  </view>
+  <view class='record'>
+    <block wx:for='{{data}}'>
+      <view class='item'>
+        <text class='item-people'>{{item.name}}</text>
+        <text class='item-step'>{{item.step}}</text>
+        <text class='item-time'>{{item.created_at}}</text>
+      </view>
+    </block>
+  </view>
+</view>

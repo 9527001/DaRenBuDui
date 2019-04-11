@@ -95,6 +95,7 @@ App({
       share: '../../pages/share/share',
       signIn: "../../pages/sign-in/sign-in",
       rankinglist: "../../pages/rankinglist/rankinglist",
+      helpEachOtherRecord: "../../pages/helpeachotherrecord/helpeachotherrecord",
     },
     
   }

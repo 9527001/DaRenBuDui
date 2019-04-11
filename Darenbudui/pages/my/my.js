@@ -153,6 +153,11 @@ Page({
           url: getApp().globalData.routes.rankinglist,
         })
         break;
+      case 6://互助记录
+        wx.navigateTo({
+          url: getApp().globalData.routes.helpEachOtherRecord,
+        })
+        break;
       default:
         break;
     }

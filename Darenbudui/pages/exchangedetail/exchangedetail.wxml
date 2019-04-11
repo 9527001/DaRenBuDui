@@ -1,0 +1,51 @@
+<!--pages/exchangedetail/exchangedetail.wxml-->
+<view class='main'>
+
+  <!-- 图片页面 -->
+  <swiper class='banner' indicator-dots="{{banner.indicator}}" autoplay="{{banner.autoplay}}" interval="{{banner.interval}}" duration="{{banner.duration}}" circular="true" indicator-active-color='{{banner.indicatoractivecolor}}' indicator-color='{{banner.indicatorcolor}}'>
+    <block wx:for="{{info.image}}" wx:key="id">
+      <swiper-item class="swiper-item">
+        <image class="slide-image" src="{{item}}" model="aspectFit" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 商品信息 -->
+  <view class='info'>
+    <view class='info-left'>
+      <text class='info-title'>{{info.name}}</text>
+      <view class='money'>
+        <image class='icon' src='../../res/icons_06.png'></image>
+        <text>{{info.price}}达人币</text>
+      </view>
+    </view>
+    <text class='stock'>剩余{{info.stock}}件</text>
+  </view>
+  <!-- 兑换记录 -->
+  <view class='exchangerecordlist' wx:if="{{list.length>0}}">
+    <view class='recordtitle'>兑换记录</view>
+    <view class='recordlist'>
+      <block wx:for='{{list}}'>
+        <view class='orderitem'>
+          <view class='order-left'>
+            <image src='{{item.header}}'></image>
+            <text class='order-nickname'>{{item.username}}</text>
+          </view>
+          <view class='order-middle'>兑换了{{item.goods_name}}</view>
+          <view class='order-right'>{{item.created_at}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 兑换按钮 -->
+  <view class='exchange-button' bindtap='onClickExchange'>兑换商品</view>
+
+  <!-- 分享 -->
+  <view class='share' bindtap='onclickshare'>
+    <image class='share-image' src='{{share.image}}'></image>
+    <text class='share-title'>{{share.title}}</text>
+  </view>
+
+  <!-- 弹窗 -->
+  <stepcount id='stepcount' headerimage='{{info.image[0]}}' goodsname='{{info.name}}' money='{{info.price}}' currentmoney='0' bind:onclickAdd='onclickAdd'></stepcount>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/share/share.wxml-->
+<view class='main'>
+  <swiper class='banner'>
+    <block wx:for="{{bannerArr}}" wx:key="id">
+      <swiper-item class="swiper-item" circular="true">
+        <image src="{{item}}" class="slide-image" model="aspectFit"></image>
+        <view class='content'>
+          <image class='icon' src='{{headericon}}' model="aspectFit"></image>
+          <view class='text'>
+            <text class='name'>{{name}}</text>
+            <text class='appname'>{{appname}}</text>
+            <text class='appname'>{{stepsalltoday}}</text>
+            <text class='appname'>排名第{{rank}}名，请送我上去</text>
+          </view>
+          <image class='linkimage' src='{{linkimage}}' model="aspectFit"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='bottom'>
+    <view class='save'>保存图片</view>
+    <button class='share' open-type='share'>分享</button>
+  </view>
+</view>

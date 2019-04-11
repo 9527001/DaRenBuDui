@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 13,
 			"list": [
 				{
 					"id": -1,
@@ -113,6 +113,27 @@
 					"id": -1,
 					"name": "排行榜活动规则",
 					"pathName": "pages/rankinglistrule/rankinglistrule",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/share/share",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "兑换",
+					"pathName": "pages/exchange/exchange",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/exchangedetail/exchangedetail",
 					"scene": null
 				}
 			]

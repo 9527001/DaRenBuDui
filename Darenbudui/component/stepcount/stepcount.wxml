@@ -1,0 +1,23 @@
+<!--component/stepcount/stepcount.wxml-->
+<view class='mask-container' hidden='{{isHiddenMask}}' >
+  <view class='model-mask' bindtap='onClickMask' catchtouchmove='preventTouchMove'></view>
+
+  <view class='model-dialog' catchtouchmove='preventTouchMove'>
+    <view class='top'>
+      <image class='cancle' src='{{info.cancleimage}}' bindtap='onClickCancle'></image>
+    </view>
+
+    <view class='core'>
+      <image class='goodsimage' src='{{headerimage}}'></image>
+      <text class='goodsname'>{{goodsname}}</text>
+      <view class='money'>
+        <image class='money-icon' src='{{info.moneyicon}}'></image>
+        <text class='money-title'>{{money}}达人币</text>
+      </view>
+      <text class='currentmoney'>当前达人币为{{currentmoney}}，还差{{money - currentmoney}}达人币</text>
+      <view class='addbutton' bindtap='onClickAdd'>{{info.buttontile}}</view>
+    </view>
+  </view>
+
+
+</view>

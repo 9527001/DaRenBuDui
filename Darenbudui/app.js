@@ -91,5 +91,11 @@ App({
   globalData: {
     userInfo: null,
     baseUrl: "http://clock.weiyingjia.org",  // 网络接口全局变量
+    routes: {
+      share: '../../pages/share/share',
+      signIn: "../../pages/sign-in/sign-in",
+      rankinglist: "../../pages/rankinglist/rankinglist",
+    },
+    
   }
 })

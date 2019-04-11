@@ -1,0 +1,98 @@
+/* component/stepcount/stepcount.wxss */
+
+.mask-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* 蒙层 */
+.model-mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 核心 */
+.model-dialog {
+ position: absolute;
+  /* left: 50%; */
+  top: 200rpx;
+  left: 48rpx;
+  right: 48rpx;
+
+  /* width: 80%; */
+  /* max-width: 600rpx; */
+  border: 2rpx solid #ccc;
+  border-radius: 30rpx;
+  box-sizing: bordre-box;
+  /* transform: translate(-50%, -50%);  */
+  overflow: hidden;
+  background: #fff;
+}
+
+.top {
+  margin-top: 32rpx;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cancle {
+  margin-right: 32rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.core {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.core .goodsimage {
+  
+  width: 400rpx;
+  height: 400rpx;
+  border: 2px solid black;
+}
+.core .goodsname {
+  margin-top: 32rpx;
+  font-size: 32rpx;
+} 
+.core .money {
+  margin-top: 32rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.money .money-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+}
+.money .money-title {
+  font-size: 28rpx;
+  color: #ff9e45;
+}
+.currentmoney {
+  margin-top: 32rpx;
+  font-size: 24rpx;
+  color: #050919;
+}
+ .addbutton {
+  margin-top: 32rpx;
+  width: 90%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to right,#5fef3f,#00ae17);
+  text-align: center;
+  color: white;
+}

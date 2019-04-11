@@ -72,7 +72,7 @@ Page({
         })
       }
     });
-    
+
   },
 
   /**
@@ -126,17 +126,32 @@ Page({
   onClickItem: function(event) {
     var ID = event.currentTarget.dataset.id;
     switch (ID) {
-      case 1:
+      case 0://签到
+        wx.navigateTo({
+          url: getApp().globalData.routes.signIn,
+        })
+        break;
+      case 1://邀请好友
         {
           wx.showShareMenu({
             withShareTicket: true
           });
         }
         break;
-      case 3:
+      case 2://我的订单
+        {
+         
+        }
+        break;
+      case 3://收货地址
         {
           this.chooseAddress();
         }
+        break;
+      case 4://排行榜
+        wx.navigateTo({
+          url: getApp().globalData.routes.rankinglist,
+        })
         break;
       default:
         break;
@@ -173,13 +188,13 @@ Page({
     })
   },
   // 获取手机号
-  getPhoneNumber: function (e) {
+  getPhoneNumber: function(e) {
     var phoneNumber = 'userInfo.phoneNumber';
-    console.log('微信手机号信息',e);
+    console.log('微信手机号信息', e);
     this.setData({
-       
-      [phoneNumber]: '18513119750', 
-      
+
+      [phoneNumber]: '18513119750',
+
     })
 
     // session	string
@@ -195,5 +210,5 @@ Page({
       })
     })
   },
-    
+
 })

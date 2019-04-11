@@ -112,6 +112,14 @@ Page({
       case 1:
         this.toRankinglist();
         break;
+      case 2:
+        wx.showToast({
+          title: '邀好友',
+        })
+      break;
+      case 3:
+        this.toShare();
+        break;
       default:
         wx.showToast({
           title: event.currentTarget.dataset.id + '',
@@ -128,7 +136,12 @@ Page({
   toRankinglist() {
     wx.navigateTo({
       url: '../../pages/rankinglist/rankinglist',
-    
+
+    })
+  },
+  toShare() {
+    wx.navigateTo({
+      url: '../../pages/share/share',
     })
   },
 

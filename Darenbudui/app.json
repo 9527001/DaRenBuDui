@@ -12,7 +12,9 @@
     "pages/cardtofriendRecord/cardtofriendRecord",
     "pages/cardtomoney/cardtomoney",
     "pages/rankinglist/rankinglist",
-    "pages/rankinglistrule/rankinglistrule"
+    "pages/rankinglistrule/rankinglistrule",
+    "pages/share/share",
+    "pages/exchangedetail/exchangedetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -51,5 +53,8 @@
         "selectedIconPath": "res/home_my_1.png"
       }
     ]
+  },
+  "usingComponents": {
+    "stepcount": "../../component/stepcount/stepcount"
   }
 }

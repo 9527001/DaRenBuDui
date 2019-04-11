@@ -85,10 +85,22 @@ Page({
   // 免费兑换按钮
   clickOnExchange: function(event) {
     wx.showToast('hello world');
+    wx.navigateTo({
+      url: '../../pages/exchangedetail/exchangedetail',
+    })
+  },
+  onClickItem: function(event) {
 
+    var id = event.currentTarget.dataset.id;
+    var str = id.toString();
+    var goods_type = event.currentTarget.dataset.item.goods_type;
+    console.log(event);
+    wx.navigateTo({
+      url: '../../pages/exchangedetail/exchangedetail?id=' + str + '&goods_type=' + goods_type,
+    })
   },
 
-// 下拉加载 未实现
+  // 下拉加载 未实现
   loadmoreData() {
 
     var currentPage = this.currentPage;
@@ -96,7 +108,7 @@ Page({
     this.http();
   },
 
-// 下拉刷新
+  // 下拉刷新
   refreshData() {
     var currentPage = 0;
     this.http();
@@ -114,6 +126,6 @@ Page({
       })
 
     })
-   
+
   }
 })

@@ -1,0 +1,147 @@
+/* pages/exchangedetail/exchangedetail.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #faf4fb;
+  position: relative;
+}
+
+.main {
+  width: 100%;
+  margin-bottom: 150rpx;
+  background-color: #faf4fb;
+  /* position: relative; */
+}
+
+/* 商品轮播图 */
+.banner {
+  width: 100%;
+  height: 750rpx;
+}
+.swiper-item {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-item image{
+  width: 100%;
+  height: 100%;
+}
+/* 商品信息 */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: white;
+  padding: 16rpx 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.info-left {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.info-left .info-title {
+  font-size: 30rpx;
+  margin-bottom: 16rpx;
+}
+
+.info-left .money {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.money image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.money text {
+  margin-left: 8rpx;
+  font-size: 26rpx;
+  color: #ffa300;
+}
+
+.stock {
+  font-size: 26rpx;
+}
+
+/* 兑换记录 */
+
+.exchangerecordlist {
+  width: 100%;
+}
+
+.recordtitle {
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #00a44e;
+}
+
+.recordlist {
+  margin-top: 10rpx;
+  padding: 32rpx;
+  background-color: white;
+}
+
+.recordlist .orderitem {
+  /* height: rpx; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  margin-bottom: 16rpx;
+}
+
+.orderitem .order-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderitem .order-left image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 16rpx;
+}
+
+/* 兑换商品 */
+.exchange-button {
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  color: white;
+  background: linear-gradient(to right,#61f041,#00af18);
+  font-size: 30rpx;
+  text-align: center;
+}
+
+/* 分享按钮 */
+.share {
+  position: fixed;
+  top: 32rpx;
+  right: 16rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.share-image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+}
+.share-title {
+  font-size: 26rpx;
+  color: #968f89;
+}

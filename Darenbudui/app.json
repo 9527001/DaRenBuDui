@@ -15,7 +15,8 @@
     "pages/rankinglistrule/rankinglistrule",
     "pages/share/share",
     "pages/exchangedetail/exchangedetail",
-    "pages/helpeachotherrecord/helpeachotherrecord"
+    "pages/helpeachotherrecord/helpeachotherrecord",
+    "pages/orderlist/orderlist"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -56,6 +57,7 @@
     ]
   },
   "usingComponents": {
-    "stepcount": "../../component/stepcount/stepcount"
+    "stepcount": "../../component/stepcount/stepcount",
+    "tabs": "../../component/tabs/tabs"
   }
 }

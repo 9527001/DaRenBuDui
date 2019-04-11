@@ -96,6 +96,7 @@ App({
       signIn: "../../pages/sign-in/sign-in",
       rankinglist: "../../pages/rankinglist/rankinglist",
       helpEachOtherRecord: "../../pages/helpeachotherrecord/helpeachotherrecord",
+      orderlist: "../../pages/orderlist/orderlist",
     },
     
   }

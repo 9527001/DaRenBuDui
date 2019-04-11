@@ -140,7 +140,9 @@ Page({
         break;
       case 2://我的订单
         {
-         
+          wx.navigateTo({
+            url: getApp().globalData.routes.orderlist,
+          })
         }
         break;
       case 3://收货地址

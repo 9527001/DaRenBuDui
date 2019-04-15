@@ -1,6 +1,7 @@
 // pages/home/home.js
 
 var netUtil = require("../../common/netutil/netutil.js");
+var API = require(getApp().globalData.api);
 //require引入
 const order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({
@@ -52,6 +53,7 @@ Page({
   onLoad: function(options) {
     this.refreshData();
     this.getBannerList();
+    // this.updateUserInfo();
   },
 
   /**
@@ -116,7 +118,7 @@ Page({
         wx.showToast({
           title: '邀好友',
         })
-      break;
+        break;
       case 3:
         this.toShare();
         break;
@@ -173,7 +175,23 @@ Page({
         bannerArr: res.data
       })
 
-    }, )
+    } )
 
-  }
+    // API.getBanner(res => {
+    //   this.setData({
+    //     bannerArr: res.data
+    //   })
+    // });
+
+  },
+  onClickItem: function(event) {
+    var id = event.currentTarget.dataset.item.id;
+    var goods_type = event.currentTarget.dataset.item.goods_type;
+    console.log(event);
+    wx.navigateTo({
+      url: getApp().globalData.routes.exchangedetail + '?id=' + id + '&goods_type=' + goods_type,
+    })
+  },
+
+
 })

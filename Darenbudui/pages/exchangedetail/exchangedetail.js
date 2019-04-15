@@ -1,6 +1,7 @@
 // pages/exchangedetail/exchangedetail.js
 
 var netUtil = require("../../common/netutil/netutil.js");
+var API = require(getApp().globalData.api);
 Page({
 
   /**

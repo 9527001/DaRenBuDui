@@ -7,10 +7,10 @@
       <image class='top-bg' src='../../res/rankinglist/rankinglist-coin-rank.png' mode='aspectFill'></image>
       <view class='rule' bindtap='onClickRule'>活动规则</view>
       <view class='content'>
-        <text class='ranking'>{{ranking}}</text>
-        <image class='avtarurl' src='{{avtarurl}}' mode='aspectFit'></image>
-        <text class='name'>{{name}}</text>
-        <rich-text class='money'>{{money}}币</rich-text>
+        <text class='ranking'>{{myinfo.rank}}</text>
+        <image class='avtarurl' src='{{myinfo.header}}' mode='aspectFit'></image>
+        <text class='name'>{{myinfo.username}}</text>
+        <rich-text class='money'>{{myinfo.num}}币</rich-text>
       </view>
     </view>
     <!-- 中部 -->

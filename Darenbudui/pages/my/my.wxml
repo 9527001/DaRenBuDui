@@ -7,20 +7,23 @@
       <image class='top-bg' src='../../res/my-top-bg.png'></image>
       <view class='name'>
         <text class='nickname'>{{userInfo.nickName ? userInfo.nickName : "点击获取昵称"}}</text>
-        <button class='phone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >{{userInfo.phoneNumber ? userInfo.phoneNumber : "点击获取手机号码"}}</button>
-        
+        <button class='phone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">{{userInfo.phoneNumber ? userInfo.phoneNumber : "点击获取手机号码"}}</button>
+
       </view>
       <view class='data'>
         <view class='money'>
-          <text class='money-data'>{{balance ? balance : "0"}}</text>
+          <text class='money-data'>{{userInfo.point}}</text>
           <text class='money-title'>达人币余额</text>
         </view>
         <view class='money'>
-          <text class='money-data'>{{time ? time : "0"}}</text>
+          <text class='money-data'>{{userInfo.time}}</text>
           <text class='money-title'>累计天数</text>
         </view>
       </view>
-      <image class='icon' src='{{userInfo.avatarUrl ? userInfo.avatarUrl : "../../res/activity-2.png"}}' mode='aspectFill'></image>
+      <button class='icon' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+        <image class='icon-content' src='{{userInfo.avatarUrl ? userInfo.avatarUrl : "../../res/activity-2.png"}}' mode='aspectFit'></image>
+      </button>
+
     </view>
 
     <!-- 中间标签 -->

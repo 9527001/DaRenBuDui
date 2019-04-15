@@ -2,7 +2,7 @@
 
 <!-- tradeList是要循环的数组，内部的属性通过item.xxx的方式调用 -->
 <view class='list'>
-  <block wx:for='{{tradeList}}'>
+  <block wx:for='{{tradeList}}' wx:key='item.id'>
     <!-- data-*属性在触发事件时获取  -->
     <view class='singleTrade' hover-class='item-press' data-id='{{item.id}}' data-item='{{item}}' bindtap='onClickItem'>
       <!-- 商品图片 -->
@@ -14,7 +14,7 @@
       <!-- 价格 -->
       <view class='b'>
         <image src='../../res/icons_06.png' class='b-icon' catchtap='deleteCollection' data-pos='{{index}}' />
-        <view class='price'>{{item.price}}币+￥{{item.discount_price}}</view>
+        <view class='price'>{{item.type==2 ? item.price + '币' :item.price}}</view>
       </view>
       <view class='exchange'>
         <button bindtap="clickOnExchange">免费兑换</button>

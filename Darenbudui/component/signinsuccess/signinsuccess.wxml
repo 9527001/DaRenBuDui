@@ -1,0 +1,25 @@
+<!--component/signinsuccess/signinsuccess.wxml-->
+
+<view class='mask-container' hidden='{{isHiddenMask}}'>
+  <view class='model-mask' bindtap='onMaskClick' catchtouchmove='preventTouchMove'></view>
+
+  <view class='model-dialog' catchtouchmove='preventTouchMove'>
+    <image class='title-bg' src='../../res/sign-in/sign-in-popup-t-bg.png'></image>
+    <view class='title-view'>
+      <text class='model-title'>{{title}}</text>
+    </view>
+    <!-- 核心内容 -->
+    <view class='extra'>
+      <image src='../../res/sign-in/sign-in-send.png'></image>
+      <view class='model-content'>{{content}}</view>
+      <view class='model-footer'>
+        <text class='confirm' bindtap='onClickConfirm'>{{confirmtext}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 取消 -->
+  <image class='cancle' src='../../res/sign-in/sign-in-close.png' bindtap='onClickCanCle'></image>
+
+</view>
+
+

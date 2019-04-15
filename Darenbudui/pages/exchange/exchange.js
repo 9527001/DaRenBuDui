@@ -1,22 +1,23 @@
 // pages/exchange/exchange.js
 var netUtil = require("../../common/netutil/netutil.js");
+var API = require(getApp().globalData.api);
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // tradeList: [{
-    //   img: '../../res/activity-3.png',
-    //   name: '晴雨伞',
-    //   stock: '10',
-    //   price: '111',
-    // }, {
-    //   img: '../../res/activity-2.png',
-    //   name: '纸巾/箱',
-    //   stock: '10',
-    //   price: '111',
-    // }],
+    tradeList: [{
+      img: '../../res/activity-3.png',
+      name: '晴雨伞',
+      stock: '10',
+      price: '111',
+    }, {
+      img: '../../res/activity-2.png',
+      name: '纸巾/箱',
+      stock: '10',
+      price: '111',
+    }],
 
   },
 
@@ -115,17 +116,28 @@ Page({
   },
   // 网络请求
   http() {
+    
+    // netUtil.request_get_param("pointgoodslist", {
+    //   type: 1,
+    //   page: this.currentPage,
+    //   position: 2,
+    // }, res => {
+    //   console.log('积分兑换',res);
+    //   this.setData({
+    //     tradeList: res.data
+    //   })
 
-    netUtil.request_param("pointgoodslist", {
+    // });
+
+    API.getGoodsList({
       type: 1,
       page: this.currentPage,
       position: 2,
-    }, res => {
+    }, res=>{
+      console.log('sdfsdfsdfsf',res);
       this.setData({
         tradeList: res.data
       })
-
-    })
-
+    });
   }
 })

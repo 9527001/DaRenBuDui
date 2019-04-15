@@ -1,0 +1,4 @@
+<!--pages/rules/rules.wxml-->
+<view class='main'>
+  <text class='content'>{{info.data}}</text>
+</view>

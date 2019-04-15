@@ -13,7 +13,7 @@ Page({
       "../../res/activity-2.png",
     ],
     headericon: '../../res/activity-2.png',
-    name: '无问西东',
+    name: 'test',
     appname: '达人步兑',
     stepsalltoday: '今日总步数8698步',
     rank: 23,
@@ -25,6 +25,10 @@ Page({
    */
   onLoad: function(options) {
     this.http();
+    this.setData({
+      headericon: getApp().globalData.userInfo.header,
+      name: getApp().globalData.userInfo.username
+    })
   },
 
   /**
@@ -77,10 +81,8 @@ Page({
   },
  
   http: function () {
-    var path = 'get-share-back';
-    netUtil.request_get_param(path,{
-      type:1,
-    }, res => {
+    var path = 'get-share-back/1';
+    netUtil.request_get(path, res => {
       this.setData({
         bannerArr: res.data
       })

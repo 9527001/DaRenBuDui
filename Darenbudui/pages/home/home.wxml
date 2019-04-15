@@ -46,7 +46,7 @@
     <view class='list'>
       <block wx:for='{{tradeList}}' wx:key="id">
         <!-- data-*属性在触发事件时获取  -->
-        <view class='singleTrade' hover-class='item-press' data-id='{{item.goodsId}}'>
+        <view class='singleTrade' hover-class='item-press' data-id='{{item.goodsId}}' data-item='{{item}}' bindtap='onClickItem'>
           <!-- 商品图片 -->
           <image src='{{item.img ? item.img : "../../res/activity-2.png"}}' class='img' mode='aspectFill' />
           <!-- 商品名字 -->
@@ -56,7 +56,8 @@
           <!-- 价格 -->
           <view class='b'>
             <image src='../../res/icons_06.png' class='b-icon' catchtap='deleteCollection' data-pos='{{index}}' />
-            <view class='price'>{{item.price}}币+￥{{item.discount_price}}</view>
+            <view class='price'>{{item.type==2 ? item.price + '币' :item.price}}</view>
+            
           </view>
           <view class='exchange'>
             <button bindtap="clickOnExchange">免费兑换</button>

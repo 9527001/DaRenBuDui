@@ -2,29 +2,28 @@
 
 <view class='sign-in'>
   <text class='rule' bindtap='onClickSignInRules'>签到规则</text>
-  <label class='signed-supplement'>2天可以补签</label>
+  <label class='signed-supplement'>{{repairDays}}天可以补签</label>
   <view class='status'>
     <view class='status-label'>
-      <text class='number'>1天</text>
+      <text class='number'>{{list.count}}</text>
       <text class='note'>连续天数</text>
     </view>
-    <text class='sign-in-button'>已签</text>
+    <text wx:if="{{list.isSignin}}" class='sign-in-button' bindtap='onClickSignined'>已签</text>
+    <text wx:else class='sign-in-button-toSignin' bindtap='onClickSignin'>签到</text>
     <view class='status-label'>
-      <text class='number'>2号</text>
+      <text class='number'>{{list.today_real}}</text>
       <text class='note'>今日卡牌</text>
     </view>
   </view>
   <view class='calendar'>
-    <block wx:for='{{calendarList}}' wx:key="value">
+    <block wx:for='{{list.data}}' wx:key="id">
 
       <view class='calendarItem' data-item='{{item}}' bindtap='onClickCalendar'>
 
-        <view class='bu' wx:if="{{item.status==2}}">
-
+        <view class='bu' wx:if="{{item.status==1}}">
           <image src='../../res/sign-in/sign-in-icon-bu.png'></image>
-
         </view>
-        <view wx:elif="{{item.status==1}}" class='signed'>
+        <view class='signed' wx:elif="{{item.status==2}}">
           <image src='../../res/sign-in/singn-icon-sign-bg.png'></image>
           <view class='signed-content'>
             <text>{{item.value}}</text>
@@ -32,9 +31,7 @@
           </view>
         </view>
         <view class='normal' wx:else>
-
           <text>{{item.value}}</text>
-
         </view>
 
       </view>
@@ -46,7 +43,8 @@
   <image class='bg-image' src='../../res/sign-in/sign-in-bg0.png' mode='aspectFill'></image>
   <!-- 底部背景图片 -->
   <image class='bg-image-bottom' src='../../res/sign-in/sign-in-bg1-X.png'></image>
-  <supplement id='supplement' content='{{"是否花费" + supplementMoney+ "步补签"}}' bind:onclickConfirm='clickConfirm'></supplement>
+  <supplement id='supplement' content='{{"是否花费" + list.repair+ "步补签"}}' bind:onclickConfirm='clickConfirm'></supplement>
+  <signinsuccess id='signinsuccess'  bind:onClickCancle='onClickSignSuccess'></signinsuccess>
 
 
 </view>

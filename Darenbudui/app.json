@@ -16,7 +16,8 @@
     "pages/share/share",
     "pages/exchangedetail/exchangedetail",
     "pages/helpeachotherrecord/helpeachotherrecord",
-    "pages/orderlist/orderlist"
+    "pages/orderlist/orderlist",
+    "pages/rules/rules"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -58,6 +59,10 @@
   },
   "usingComponents": {
     "stepcount": "../../component/stepcount/stepcount",
-    "tabs": "../../component/tabs/tabs"
+    "tabs": "../../component/tabs/tabs",
+    "tabs": "../../miniprogram_npm/vant-weapp/tabs/index",
+    "signinsuccess": "../../component/signinsuccess/signinsuccess"
+    
+    
   }
 }

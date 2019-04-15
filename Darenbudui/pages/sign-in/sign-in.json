@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "supplement": "../../component/supplement/supplement"
+
   },
   "navigationBarTitleText": "签到记录"
 }

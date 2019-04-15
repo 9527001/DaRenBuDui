@@ -5,26 +5,55 @@ Page({
    * 页面的初始数据
    */
   data: {
-    statusType: [{
-        name: "兑换订单",
-        page: 0
+
+    exchagelist: [{
+        "id": 9,
+        "order_no": "20180803162628100246",
+        "goods_num": 1,
+        "order_status": "处理中",
+        "goods_id": 4,
+        "goods_type": 1, // 商品类型 1普通 2折扣
+        "goods_price": 100,
+        "name": "小猪佩奇圆形挎包",
+        "goods_img": "http://clock.weiyingjia.org//images/2018-07-31/201807311807133415.jpg",
+        "real_name": "高连杰",
+        "phone": "18513199372",
+        "address": "北京市通州区新建村二期高层19号楼2单元1501室",
+        "created_at": "2018-08-03"
       },
       {
-        name: "活动订单",
-        page: 1
+        "id": 9,
+        "order_no": "20180803162628100246",
+        "goods_num": 1,
+        "order_status": "处理中",
+        "goods_id": 4,
+        "goods_type": 1, // 商品类型 1普通 2折扣
+        "goods_price": 100,
+        "name": "小猪佩奇圆形挎包",
+        "goods_img": "http://clock.weiyingjia.org//images/2018-07-31/201807311807133415.jpg",
+        "real_name": "高连杰",
+        "phone": "18513199372",
+        "address": "北京市通州区新建村二期高层19号楼2单元1501室",
+        "created_at": "2018-08-03"
       },
     ],
-    currentType: 0,
-    list: [
-      [],
-      [],
-      [],
-      [],
-      []
-    ],
-    goodsMap: [{}, {}, {}, {}, {}],
-    logisticsMap: [{}, {}, {}, {}, {}],
-    windowHeight: '',
+
+    activitylist: [{
+      "id": 9,
+      "order_no": "20180803162628100246",
+      "goods_num": 1,
+      "order_status": "处理中",
+      "goods_id": 4,
+      "goods_type": 1, // 商品类型 1普通 2折扣
+      "goods_price": 100,
+      "name": "小猪佩奇圆形挎包",
+      "goods_img": "http://clock.weiyingjia.org//images/2018-07-31/201807311807133415.jpg",
+      "real_name": "高连杰",
+      "phone": "18513199372",
+      "address": "北京市通州区新建村二期高层19号楼2单元1501室",
+      "created_at": "2018-08-03"
+    }, ],
+
   },
 
   /**

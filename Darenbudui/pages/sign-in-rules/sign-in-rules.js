@@ -1,18 +1,20 @@
 // pages/sign-in-rules/sign-in-rules.js
+var netUtil = require(getApp().globalData.routes.netutil);
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    content:'签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励  签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励  签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励  签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励  签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励  签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   签到奖励   ',
+    title:'签到规则说明',//签到标题 默认
+    content:'',//签到规则
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.http();
   },
 
   /**
@@ -62,5 +64,13 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  http() {
+    netUtil.request_get('get-step-rule', res => {
+      this.setData({
+        'content': res.sign
+      })
+    })
+  },
+  
 })

@@ -1,11 +1,19 @@
 function get_simple(url, onSuccess) {
   request(url, null, "GET", null, onSuccess, null);
 }
+function get_simple_nojwt(url, onSuccess) {
+  request_noJWT(url, null, "GET", null, onSuccess, null);
+}
 
 function get_param(url, param, onSuccess) {
   request(url, param, "GET", null, onSuccess, null);
 }
 
+
+
+function post_simple(url, onSuccess) {
+  request(url, null, "POST", null, onSuccess, null);
+}
 function post_param(url, param, onSuccess) {
   request(url, param, "POST", null, onSuccess, null);
 }
@@ -37,16 +45,10 @@ function request(url, params, method, onStart, onSuccess, onFailed) {
   if (onStart) {
     onStart(); //request start
   }
-
-  // var token = wx.getStorage({
-  //   key: 'token',
-  //   success: function(res) {
-  //     console.log('token', res);
-  //     token = res.data;
-  //   },
-  // })
-
-
+  var token = getApp().globalData.userInfo.token;
+  wx.showLoading({
+    title: '加载中...',
+  });
   wx.request({
 
     url: getApp().globalData.baseUrl + '/api/base/' + url,
@@ -54,20 +56,74 @@ function request(url, params, method, onStart, onSuccess, onFailed) {
     method: method,
     header: {
       'content-type': 'application/json',
-      // 'Authorization': "Bearer" + token,
+      'Authorization': "Bearer" + token,
     },
     success: function(res) {
-      if (res.data) {
-        onSuccess(res.data); //request success
+      var status_code = res.statusCode;
+      if(status_code == 200) {
+        onSuccess(res.data); 
+      }else{
+        wx.showToast({
+          icon: 'none',
+          title: res.data.message,
+        });
+        
       }
+      
     },
 
     fail: function(error) {
-      onFailed(""); //failure for other reasons
+      onFailed("请求失败"); //failure for other reasons
+      wx.showToast({
+        title: error.message,
+      });
     },
     complete: function(res) {
-      // complete
-      console.log('http://clock.weiyingjia.org/api/base/' + url  + '  请求结束', res.data, JSON.stringify(res.data));
+      console.log('请求结束' + getApp().globalData.baseUrl + '/' + url + '\n' + 'token\n' + token + '\n param \n',params,res 
+      // JSON.stringify(res.data)
+      );
+      wx.hideLoading();
+
+    },
+
+  })
+}
+
+function request_noJWT(url, params, method, onStart, onSuccess, onFailed) {
+  if (onStart) {
+    onStart(); //request start
+  }
+
+  wx.request({
+    data: dealParams(params),
+    method: method,
+    header: {
+      'content-type': 'application/json',
+    },
+    success: function (res) {
+      var status_code = res.status_code;
+      if (status_code == 200) {
+        onSuccess(res.data);
+      } else {
+        wx.showToast({
+          icon: 'none',
+          title: res.data.message,
+        })
+        
+      }
+
+    },
+
+    fail: function (error) {
+      onFailed("请求失败"); //failure for other reasons
+      wx.showToast({
+        title: error.message,
+      })
+    },
+    complete: function (res) {
+      console.log('请求结束' + getApp().globalData.baseUrl + '/' + url  + '\n param \n', params, res
+        // JSON.stringify(res.data)
+      );
 
     },
 
@@ -82,12 +138,31 @@ function dealParams(params) {
   return params;
 }
 
+function isBlank(str) {
+  if (Object.prototype.toString.call(str) === '[object Undefined]') {//空
+    return true
+  } else if (
+    Object.prototype.toString.call(str) === '[object String]' ||
+    Object.prototype.toString.call(str) === '[object Array]') { //字条串或数组
+    return str.length == 0 ? true : false
+  } else if (Object.prototype.toString.call(str) === '[object Object]') {
+    return JSON.stringify(str) == '{}' ? true : false
+  } else {
+    return true
+  }
+
+}
+
+
 module.exports = {
   request: get_simple,
   request_get: get_simple,
+  request_get_nojwt: get_simple_nojwt,
 
   request_param: get_param,
   request_get_param: get_param,
 
+  request_post: post_simple,
   reqest_post_param: post_param,
+  request_post_param: post_param,
 }

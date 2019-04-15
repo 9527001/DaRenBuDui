@@ -3,8 +3,9 @@
   <view class='main'>
     <image class='top-bg' src='../../res/sign-in/sign-in-rule-bg.png'></image>
     <image class='top-bg-t' src='../../res/sign-in/sign-in-rule-t-bg.png' mode='aspectFit'></image>
+    <view class='title'>{{title}}</view>
     <view class='core'>
-      <view class='content'>{{content}}</view>
+      <text class='content'>{{content}}</text>
     </view>
   </view>
 </scroll-view>

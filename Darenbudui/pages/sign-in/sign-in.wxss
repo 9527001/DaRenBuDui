@@ -69,11 +69,23 @@
   font-size: 20rpx;
 }
 
-.sign-in-button {
+.status .sign-in-button {
   font-size: 50rpx;
   /* 选中的颜色 */
   color: #a8a5a9;
   background-color: #e4e1e5;
+  width: 400rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+}
+.status .sign-in-button-toSignin {
+   font-size: 50rpx;
+  /* 选中的颜色 */
+  color: white;
+  background-color: #e4e1e5;
+  background: linear-gradient(to right,#ff8e00,#ffc800);
   width: 400rpx;
   height: 100rpx;
   text-align: center;

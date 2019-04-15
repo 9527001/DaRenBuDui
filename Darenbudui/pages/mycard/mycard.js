@@ -1,4 +1,5 @@
 // pages/mycard/mycard.js
+var netUtil = require("../../common/netutil/netutil.js");
 Page({
 
   /**
@@ -54,7 +55,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.http();
   },
 
   /**
@@ -104,6 +105,11 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  http(){
+    netUtil.request_get('my-card',res=>{
+      
+    })
   },
   onClickCardToFriend() {
     wx.navigateTo({

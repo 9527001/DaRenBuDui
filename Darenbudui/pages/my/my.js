@@ -50,6 +50,8 @@ Page({
       avatarUrl: "", //用户头像
       nickName: "", //用户昵称
       phoneNumber: "", //用户手机号
+      point:'0',//达人币余额
+      time: '0',//累计天数
     }
 
   },
@@ -58,20 +60,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    /**
-     * 获取用户信息
-     */
-    wx.getUserInfo({
-      success: res => {
-        console.log('获取用户信息', res);
-        var avatarUrl = 'userInfo.avatarUrl';
-        var nickName = 'userInfo.nickName';
-        this.setData({
-          [avatarUrl]: res.userInfo.avatarUrl,
-          [nickName]: res.userInfo.nickName,
-        })
-      }
-    });
+
+    var header = getApp().globalData.userInfo.header;
+    var username = getApp().globalData.userInfo.username;
+    var phone = getApp().globalData.userInfo.phone;
+    var point = getApp().globalData.userInfo.point;
+    this.setData({
+      'userInfo.avatarUrl': header,
+      'userInfo.nickName': username,
+      'userInfo.phoneNumber': phone,
+      'userInfo.point': point
+    })
 
   },
 
@@ -160,6 +159,11 @@ Page({
           url: getApp().globalData.routes.helpEachOtherRecord,
         })
         break;
+      case 7://规则说明
+        wx.navigateTo({
+          url: getApp().globalData.routes.rules,
+        })
+        break;
       default:
         break;
     }
@@ -196,26 +200,46 @@ Page({
   },
   // 获取手机号
   getPhoneNumber: function(e) {
-    var phoneNumber = 'userInfo.phoneNumber';
-    console.log('微信手机号信息', e);
-    this.setData({
-
-      [phoneNumber]: '18513119750',
-
-    })
-
+console.log(e);
     // session	string
     // iv	string
     // encryptData	string	
-    netUtil.request_param("get-user-phone", {
-      session: '',
-      iv: e.detail.iv,
-      encryptData: e.detail.encryptData,
+    var iv = encodeURIComponent(e.detail.iv);
+    var encryptData = encodeURIComponent(e.detail.encryptedData);
+    var info = getApp().globalData.userInfo;
+    var session = getApp().globalData.userInfo.session;
+    console.log(info);
+    netUtil.reqest_post_param("get-user-phone", {
+      session: session,
+      iv: iv,
+      encryptData: encryptData,
     }, res => {
       this.setData({
-        tradeList: res.data
+        'userInfo.phoneNumber': res.phone_number
       })
     })
+  },
+  onGotUserInfo(e) {
+    var info = e.detail.userInfo;
+    console.log(e);
+    this.setData({
+      'userInfo.avatarUrl': e.detail.userInfo.avatarUrl,
+      'userInfo.nickName': e.detail.userInfo.nickName
+    });
+
+    this.updateUserInfo(e.detail.userInfo.avatarUrl, e.detail.userInfo.nickName);
+
+  },
+  updateUserInfo: function (avatarUrl, nickName) {
+    var data = {
+      uid: getApp().globalData.userInfo.uid,
+      nickName: nickName,
+      avatarUrl: avatarUrl,
+    }
+    netUtil.reqest_post_param('update-user-info',
+      data, res => {
+
+      })
   },
 
 })

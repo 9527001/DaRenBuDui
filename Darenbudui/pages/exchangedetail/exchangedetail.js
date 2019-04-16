@@ -39,6 +39,7 @@ Page({
       "go_top": 0,
       "created_at": "2018-07-31 10:07:13",
       "updated_at": null,
+      detail:'',//图文混排
       "image": [
         "http://clockadmin.weiyingjia.org/uploads/2018-08-14/201808141717285662.jpg"
       ],

@@ -9,7 +9,7 @@
     </view>
     <!-- 核心内容 -->
     <view class='extra'>
-      <image src='../../res/sign-in/sign-in-send.png'></image>
+      <image src='{{imageLogo}}'></image>
       <view class='model-content'>{{content}}</view>
       <view class='model-footer'>
         <text class='confirm' bindtap='onClickConfirm'>{{confirmtext}}</text>

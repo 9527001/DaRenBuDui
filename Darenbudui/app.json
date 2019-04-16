@@ -61,7 +61,10 @@
     "stepcount": "../../component/stepcount/stepcount",
     "tabs": "../../component/tabs/tabs",
     "tabs": "../../miniprogram_npm/vant-weapp/tabs/index",
-    "signinsuccess": "../../component/signinsuccess/signinsuccess"
+    "signinsuccess": "../../component/signinsuccess/signinsuccess",
+    "van-stepper": "../../miniprogram_npm/vant-weapp/stepper/index",
+    "van-tab": "../../miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "../../miniprogram_npm/vant-weapp/tabs/index"
     
     
   }

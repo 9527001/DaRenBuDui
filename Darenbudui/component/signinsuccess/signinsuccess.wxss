@@ -51,7 +51,7 @@
 }
 .model-detailtitle {
 
-  font-size: 25rpx;
+  font-size: 26rpx;
   color: white;
   text-align: center;
 }
@@ -63,23 +63,37 @@
   height: 500rpx;
   background-color: white;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   border-bottom-left-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
   
 }
-
- 
-.confirm {
-  color: white;
-  background-color: #ea9523;
-  height: 70rpx;
-  line-height: 70rpx;
-  width: 600rpx;
-  border-radius: 35rpx;
+.extra .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
+
+.extra .item .icon {
+  width: 150rpx;
+  height: 206rpx;
+  margin-bottom: 20rpx;
+
+}
+.extra .item .item-content {
+  font-size: 50rpx;
+
+}
+
+.extra .item .item-title {
+  font-size: 24rpx;
+  
+}
+
+
 
 .cancle {
   width: 82rpx;

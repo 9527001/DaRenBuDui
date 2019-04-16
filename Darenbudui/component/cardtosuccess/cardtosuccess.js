@@ -8,6 +8,10 @@ Component({
       type: String,
       value: '卡牌赠送成功'
     },
+    imageLogo: {
+      type: String,
+      value: '../../res/sign-in/sign-in-send.png'
+    },
     content: {
       type: String,
       value: ''
@@ -65,7 +69,7 @@ Component({
     onClickConfirm: function (e) {
       this.hidden();
       this.triggerEvent('onclickConfirm', '12331', {});
-
+    
     },
   }
 })

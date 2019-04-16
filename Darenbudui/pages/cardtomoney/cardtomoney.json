@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "送卡兑换达人币"
+  "usingComponents": {
+    "cardtosuccess": "../../component/cardtosuccess/cardtosuccess/"
+  },
+  "navigationBarTitleText": "卡牌兑换达人币"
 }

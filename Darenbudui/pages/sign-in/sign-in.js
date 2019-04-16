@@ -103,17 +103,20 @@ Page({
   //点击签到按钮 
   onClickSignin: function(event) {
     API.signin(res => {
+      this.setData({
+        signininfo: res.data
+      });
       //签到成功刷新数据
       this.http();
       this.showSignSuccess();
     })
   },
 
-  //已签到 点击事件
-  onClickSignined(){
-    this.showSignSuccess();
+  //已签到 点击事件  
+  onClickSignined() {
+    // 不作操作
   },
-  
+
 
   //签到成功的弹窗
   showSignSuccess: function() {
@@ -123,7 +126,9 @@ Page({
 
   //签到成功--确认收到
   onClickSignSuccess: function(event) {
-
+    wx.showToast({
+      title: '已确定',
+    })
   },
 
   // 点击补签
@@ -191,26 +196,25 @@ Page({
       for (var index in arr) {
         var item = arr[index];
         item.value = item.date.substring(item.date.length - 2);
-        item.status = item.sign == 1 ? 2 : 0;
+        item.status = (item.sign == 1) ? 2 : 0;
         if (item.today == 1) { //如果是当前，前两天判断
 
-          var yesterdayItem = arr[index - 1];
-          if (yesterdayItem.sign == 2) {
-            yesterdayItem.status = 1;
-            repairDays++;
+          if (index >= 0) {
+            var yesterdayItem = arr[index - 1];
+            if (yesterdayItem.sign == 2) {
+              yesterdayItem.status = 1;
+              repairDays++;
+            }
           }
-          var theDayBeforeYesterdayItem = arr[index - 2];
-          if (theDayBeforeYesterdayItem.sign == 2) {
-            theDayBeforeYesterdayItem.status = 1;
-            repairDays++;
+          if (index > 1) {
+            var theDayBeforeYesterdayItem = arr[index - 2];
+            if (theDayBeforeYesterdayItem.sign == 2) {
+              theDayBeforeYesterdayItem.status = 1;
+              repairDays++;
 
+            }
           }
 
-          var theDayBeforeYesterdayItem1 = arr[index - 3];
-          if (theDayBeforeYesterdayItem1.sign == 2) {
-            theDayBeforeYesterdayItem1.status = 1;
-
-          }
         }
       }
 

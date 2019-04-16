@@ -50,8 +50,8 @@ Page({
       avatarUrl: "", //用户头像
       nickName: "", //用户昵称
       phoneNumber: "", //用户手机号
-      point:'0',//达人币余额
-      time: '0',//累计天数
+      point: '0', //达人币余额
+      time: '0', //累计天数
     }
 
   },
@@ -125,41 +125,41 @@ Page({
   onClickItem: function(event) {
     var ID = event.currentTarget.dataset.id;
     switch (ID) {
-      case 0://签到
+      case 0: //签到
         wx.navigateTo({
           url: getApp().globalData.routes.signIn,
         })
         break;
-      case 1://邀请好友
+      case 1: //邀请好友
         {
           wx.showShareMenu({
             withShareTicket: true
           });
         }
         break;
-      case 2://我的订单
+      case 2: //我的订单
         {
           wx.navigateTo({
             url: getApp().globalData.routes.orderlist,
           })
         }
         break;
-      case 3://收货地址
+      case 3: //收货地址
         {
           this.chooseAddress();
         }
         break;
-      case 4://排行榜
+      case 4: //排行榜
         wx.navigateTo({
           url: getApp().globalData.routes.rankinglist,
         })
         break;
-      case 6://互助记录
+      case 6: //互助记录
         wx.navigateTo({
           url: getApp().globalData.routes.helpEachOtherRecord,
         })
         break;
-      case 7://规则说明
+      case 7: //规则说明
         wx.navigateTo({
           url: getApp().globalData.routes.rules,
         })
@@ -200,7 +200,7 @@ Page({
   },
   // 获取手机号
   getPhoneNumber: function(e) {
-console.log(e);
+    console.log(e);
     // session	string
     // iv	string
     // encryptData	string	
@@ -230,7 +230,7 @@ console.log(e);
     this.updateUserInfo(e.detail.userInfo.avatarUrl, e.detail.userInfo.nickName);
 
   },
-  updateUserInfo: function (avatarUrl, nickName) {
+  updateUserInfo: function(avatarUrl, nickName) {
     var data = {
       uid: getApp().globalData.userInfo.uid,
       nickName: nickName,

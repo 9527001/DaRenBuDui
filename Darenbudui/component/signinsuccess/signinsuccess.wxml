@@ -7,19 +7,23 @@
     <image class='title-bg' src='../../res/sign-in/sign-in-popup-t-bg.png'></image>
     <view class='title-view'>
       <text class='model-title'>{{title}}</text>
+      <text class='model-detailtitle'>恭喜获得</text>
     </view>
     <!-- 核心内容 -->
     <view class='extra'>
-      <image src='../../res/sign-in/sign-in-send.png'></image>
-      <view class='model-content'>{{content}}</view>
-      <view class='model-footer'>
-        <text class='confirm' bindtap='onClickConfirm'>{{confirmtext}}</text>
+      <view class='item'>
+        <image class='icon' src='../../res/sign-in/sign-in-icon-step.png' mode='aspectFit'></image>
+        <text class='item-content'>{{step}}</text>
+        <text class='item-title'>步数</text>
+      </view>
+      <view class='item'>
+        <image class='icon' src='{{"../../res/sign-in/sign-in-card-"+cardnumber+".png"}}' mode='aspectFit'></image>
+        <text class='item-content'>{{cardnumber}}</text>
+        <text class='item-title'>号卡牌</text>
       </view>
     </view>
   </view>
   <!-- 取消 -->
-  <image class='cancle' src='../../res/sign-in/sign-in-close.png' bindtap='onClickCanCle'></image>
+  <image class='cancle' src='../../res/sign-in/sign-in-close.png' bindtap='onClickCancle'></image>
 
 </view>
-
-

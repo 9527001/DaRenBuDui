@@ -4,14 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    title: {
-      type: String,
-      value: '签到成功'
-    },
-    cardimage: {
-      type: String,
-      value: '4'
-    },
+
     // 步数
     step: {
       type: String,
@@ -29,6 +22,7 @@ Component({
    */
   data: {
     isHiddenMask: true,
+    title:'签到成功',
   },
 
   /**
@@ -63,8 +57,7 @@ Component({
     },
     onClickCancle: function (e) {
       this.hidden();
-      this.triggerEvent('onClickCancle', '12331', {});
-
+      this.triggerEvent('onClickCancle', '', {});
     },
   }
   })

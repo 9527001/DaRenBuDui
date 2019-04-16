@@ -17,7 +17,7 @@ Page({
     duration: 1000,
     // circular:true,
 
-    // 更过按钮
+    // 更多按钮
     itemArr: [{
         id: 0,
         img: '../../res/sign-in.png',
@@ -186,7 +186,7 @@ Page({
   },
   onClickItem: function(event) {
     var id = event.currentTarget.dataset.item.id;
-    var goods_type = event.currentTarget.dataset.item.goods_type;
+    var goods_type = event.currentTarget.dataset.item.status;
     console.log(event);
     wx.navigateTo({
       url: getApp().globalData.routes.exchangedetail + '?id=' + id + '&goods_type=' + goods_type,

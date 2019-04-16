@@ -34,7 +34,29 @@ function getGoodsList(params,onSuccess) {
 function getRankList(onSuccess) {
   netTill.request_get(path.rank_list, onSuccess);
 }
- 
+// 我的卡牌
+function getMyCard(onSuccess) {
+  netTill.request_get(path.my_card, onSuccess);
+}
+
+// 赠送卡牌验证手机号
+function checkPhone(phone,onSuccess) {
+  var params = { 'phone':phone};
+  netTill.request_post_param(path.check_phone, params, onSuccess);
+}
+
+// 赠送卡牌
+function send_card(user_id,card,  onSuccess) {
+  var params = { 'user_id': user_id,'card':card};
+  netTill.request_post_param(path.send_card, params, onSuccess);
+}
+
+//兑换卡牌
+function card_change(change_count, onSuccess) {
+  var params = { 'change_count': change_count };//要兑换的数量 1,2 逗号分隔
+  netTill.request_post_param(path.card_change, params, onSuccess);
+}
+
 
 // 请求路径
 var path={
@@ -45,6 +67,10 @@ var path={
   goodslist: 'pointgoodslist',
   repair_sign: 'repair-sign',
   rank_list: 'rank-list',
+  my_card: 'my-card',
+  check_phone: 'check-phone',
+  send_card: 'send-card',
+  card_change:'card-change',
 }
 
 // 暴露方法
@@ -56,5 +82,9 @@ module.exports = {
   getGoodsList: getGoodsList,
   repair_sign: repair_sign,
   getRankList: getRankList,
+  getMyCard: getMyCard,
+  checkPhone: checkPhone,
+  send_card: send_card,
+  card_change: card_change,
 }
 

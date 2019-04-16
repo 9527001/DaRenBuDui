@@ -13,12 +13,14 @@
               <view class='phone'>{{item.name}}</view>
               <view class='time'>{{item.num}}</view>
             </view>
-            <view class='giving'>{{giving}}</view>
+            <van-stepper value="{{ contorlInfo.startNumber }}" min="0" max="{{item.number}}" disable-input='true' bind:change="onChange" bind:plus="onChangeAtPlus" bind:minus="onChangeAtMinus" data-item='{{item}}' />
           </view>
           <view class='itemdivline'></view>
         </view>
       </block>
     </view>
   </view>
-  <view class='cardto' bindtap='onClickCardTo'>立即兑换</view>
+  <view class='{{contorlInfo.cardNumber > 0 ? "cardtoHas" : "cardto" }}'  bindtap='{{contorlInfo.cardNumber > 0 ? "onClickCardTo" : "false" }}'>立即兑换</view>
+    <!-- 卡牌兑换成功提示 -->
+  <cardtosuccess id='cardtosuccess' title='卡牌兑换成功' content='{{"您已成功兑换"+ contorlInfo.cardToMoneyResult +"个达人币!"}}' imageLogo='../../res/sign-in/sign-in-card-to-money.png' bind:onclickConfirm='clickConfirm'></cardtosuccess>
 </view>

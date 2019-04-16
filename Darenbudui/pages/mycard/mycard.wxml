@@ -1,29 +1,35 @@
 <!--pages/mycard/mycard.wxml-->
 <!-- <scroll-view class='scroll-view' scroll-y="true"> -->
-  <view class='main'>
-    <view class='goldcard'>
-      <block wx:for='{{goldcardList}}' wx:key="id">
-        <view class='goldcardItem' data-item='{{item}}'>
-          <!-- <view class='bu' wx:if="{{item.status==2}}"> -->
-          <image src='{{item.image}}' mode='aspectFit'></image>
-          <text>2</text>
-          <!-- </view> -->
-        </view>
-      </block>
-    </view>
-    <view class='silvercard'>
-      <block wx:for='{{silvercardList}}' wx:key="id">
-        <view class='silvercardItem' data-item='{{item}}'>
-          <image src='{{item.image}}' mode='aspectFit'></image>
-          <text>2</text>
-        </view>
-      </block>
-    </view>
-    <view class='footer'>
-      <text class='card' bindtap='onClickCardToFriend'>送卡牌给朋友</text>
-      <text class='exchangeMoney' bindtap='onClickCardToMoney'>卡牌兑换达人币</text>
-    </view>
-    <view class='note'>{{note}}</view>
+<view class='main'>
+  <view class='goldcard'>
+    <block wx:for='{{goldcardList}}' wx:key="id">
+      <view class='goldcardItem' data-item='{{item}}'>
+        <!-- <view class='bu' wx:if="{{item.status==2}}"> -->
+        <image src='{{"../../res/sign-in/sign-in-card-"+item.card_name+".png"}}' mode='aspectFit'></image>
+        <view class='cover-layer' wx:if='{{item.number == 0}}'></view>
+        <text wx:if='{{item.number > 0}}'>{{item.number}}</text>
+        <!-- </view> -->
+      </view>
+    </block>
   </view>
+  <view class='silvercard'>
+    <block wx:for='{{silvercardList}}' wx:key="id">
+      <view class='silvercardItem' data-item='{{item}}'>
+        <image src='{{"../../res/sign-in/sign-in-card-"+item.card_name+".png"}}' mode='aspectFit'></image>
+        <view class='cover-layer' wx:if='{{item.number == 0}}'></view>
+        <text wx:if='{{item.number > 0}}'>{{item.number}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='footer'>
+    <text class='card' bindtap='onClickCardToFriend'>送卡牌给朋友</text>
+    <text class='exchangeMoney' bindtap='onClickCardToMoney'>卡牌兑换达人币</text>
+  </view>
+  <view class='note'>{{note}}</view>
+  <view class='note_content'>
+    <text class='note_content_text'>{{note_content}}</text>
+  </view>
+  <view class='note_note'>{{note_note}}</view>
+</view>
 
 <!-- </scroll-view> -->

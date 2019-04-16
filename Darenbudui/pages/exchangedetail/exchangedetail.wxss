@@ -91,6 +91,7 @@ page {
   margin-top: 10rpx;
   padding: 32rpx;
   background-color: white;
+  color: black;
 }
 
 .recordlist .orderitem {

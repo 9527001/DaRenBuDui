@@ -24,7 +24,7 @@
   </view>
   <!-- 兑换记录 -->
   <view class='exchangerecordlist' wx:if="{{list.length>0 || info.detail}}">
-    <van-tabs class='recordtitle' active="0" bind:change="onChange" animated swipeable="true" color="#00af18">
+    <van-tabs class='recordtitle' active="0" bind:change="onChange" animated swipeable="true" color="#00af18" z-index="0">
       <van-tab title="商品介绍">
         <rich-text class='detail' nodes="{{info.detail}}"></rich-text>
       </van-tab>
@@ -54,5 +54,6 @@
   </view>
 
   <!-- 弹窗 -->
-  <stepcount id='stepcount' headerimage='{{info.image[0]}}' goodsname='{{info.name}}' money='{{info.price}}' currentmoney='0' bind:onclickAdd='onclickAdd'></stepcount>
+  <stepcount id='stepcount' headerimage='{{info.image[0]}}' goodsname='{{info.name}}' money='{{info.price}}' currentmoney='{{selfInfo.points}}' bind:onclickAdd='onclickAdd'></stepcount>
+  <addressconfirm id='addressconfirm' alertType="{{info.is_recharge}}" address='{{addressInfo.address}}' phone="{{addressInfo.telNumber}}" consignee='{{addressInfo.userName}}' money="{{info.price}}"  bind:onClickConfirm='onClickConfirmAtAddress'></addressconfirm>
 </view>

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "addressconfirm":"../../component/addressconfirm/addressconfirm"
+  },
   "navigationBarTitleText": "商品详情"
 }

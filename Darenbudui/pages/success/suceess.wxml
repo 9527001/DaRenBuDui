@@ -1,0 +1,34 @@
+<!--pages/success/suceess.wxml-->
+<view class='main'>
+  <view class='top'>
+    <image class='bg' src='../../res/success/success-i-buy.png' mode='aspectFill'></image>
+    <view class='notes'>
+      <image  src='../../res/success/success-icon.png' mode='aspectFill'></image>
+      <text>兑换成功!</text>
+    </view>
+  </view>
+  <view class='goods'>
+    <view class='list'>
+      <block wx:for='{{tradeList}}' wx:key="id">
+        <!-- data-*属性在触发事件时获取  -->
+        <view class='singleTrade' hover-class='item-press' data-id='{{item.goodsId}}' data-item='{{item}}' bindtap='onClickItem'>
+          <!-- 商品图片 -->
+          <image src='{{item.img ? item.img : "../../res/activity-2.png"}}' class='img' mode='aspectFill' />
+          <!-- 商品名字 -->
+          <view class='name'>{{item.name}}</view>
+          <!-- 库存 -->
+          <view class='inventory'>剩余{{item.stock}}件</view>
+          <!-- 价格 -->
+          <view class='b'>
+            <image src='../../res/icons_06.png' class='b-icon' catchtap='deleteCollection' data-pos='{{index}}' />
+            <view class='price'>{{item.type==2 ? item.price + '币' :item.price}}</view>
+
+          </view>
+          <view class='exchange'>
+            <button bindtap="clickOnExchange">免费兑换</button>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

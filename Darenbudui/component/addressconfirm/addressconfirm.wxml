@@ -1,0 +1,37 @@
+<!--component/addressconfirm/addressconfirm.wxml-->
+<view class='mask-container' hidden='{{isHiddenMask}}'>
+  <view class='model-mask' bindtap='onClickMask' catchtouchmove='preventTouchMove'></view>
+
+  <view class='model-dialog' catchtouchmove='preventTouchMove'>
+    <view class='top'>
+      <image class='cancle' src='{{info.cancleimage}}' bindtap='onClickCancle'></image>
+    </view>
+    <!--  -->
+    <view class='top-core' wx:if="{{alertType==0}}">
+      <view class='title'>
+        <image src='../../res/general/general-i.png'></image>
+        <text class='note-title'>确认信息，请到”我的“中更改</text>
+      </view>
+      <view class='line'></view>
+      <view class='address-info'>
+        <text class='addressinfo-item'>收货人: {{consignee}}</text>
+        <text class='addressinfo-item'>电话: {{phone}}</text>
+        <text class='addressinfo-item'>地址: {{address}}</text>
+      </view>
+
+      <view class='line'></view>
+    </view>
+    
+    <view class='top-core' wx:elif="{{alertType==1}}">
+      <input class='phoneInput' placeholder='请输入手机号' type='number' maxlength='11' bindinput="bindKeyInput"></input>
+    </view>
+
+    <view class='core'>
+      <text class='money-title'>确认消耗{{money}}达人币兑换？</text>
+      <view class='addbutton' bindtap='onClickConfirm'>确认</view>
+      <view class='click-cancle' bindtap='onClickCancle'>再考虑下</view>
+    </view>
+  </view>
+
+
+</view>

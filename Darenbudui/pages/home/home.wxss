@@ -159,6 +159,7 @@ swiper-item {
   height: 73rpx;
 }
 
+/* 列表 */
 .product {
   width: 100%;
   background-color: green;

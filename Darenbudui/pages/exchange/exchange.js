@@ -94,7 +94,7 @@ Page({
 
     var id = event.currentTarget.dataset.id;
     var str = id.toString();
-    var goods_type = event.currentTarget.dataset.item.goods_type;
+    var goods_type = event.currentTarget.dataset.item.status;
     console.log(event);
     wx.navigateTo({
       url: '../../pages/exchangedetail/exchangedetail?id=' + str + '&goods_type=' + goods_type,
@@ -116,28 +116,16 @@ Page({
   },
   // 网络请求
   http() {
-    
-    // netUtil.request_get_param("pointgoodslist", {
-    //   type: 1,
-    //   page: this.currentPage,
-    //   position: 2,
-    // }, res => {
-    //   console.log('积分兑换',res);
-    //   this.setData({
-    //     tradeList: res.data
-    //   })
-
-    // });
-
     API.getGoodsList({
       type: 1,
       page: this.currentPage,
       position: 2,
     }, res=>{
-      console.log('sdfsdfsdfsf',res);
       this.setData({
         tradeList: res.data
       })
     });
   }
 })
+
+// 判断步数是否够用

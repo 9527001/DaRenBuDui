@@ -3,7 +3,7 @@
     <image class='top-bg' src='../../res/bg-index.png'></image>
     <view class='all-step'>
       <image src='../../res/logo-top-left.png'></image>
-      <text>67.39</text>
+      <text>{{info.point}}</text>
     </view>
     <view class='today-step'>
       <image src='../../res/step-top-right.png'></image>

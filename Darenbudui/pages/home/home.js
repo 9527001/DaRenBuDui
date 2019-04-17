@@ -39,7 +39,9 @@ Page({
         title: '凑步数'
       },
     ],
-
+    info:{
+      point:0,
+    }
   },
 
   tapMove(e) {
@@ -54,6 +56,9 @@ Page({
     this.refreshData();
     this.getBannerList();
     // this.updateUserInfo();
+    this.setData({
+      'info.point':getApp().globalData.userInfo.point
+    });
   },
 
   /**

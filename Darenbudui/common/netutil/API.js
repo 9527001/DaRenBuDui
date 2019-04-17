@@ -57,6 +57,11 @@ function card_change(change_count, onSuccess) {
   netTill.request_post_param(path.card_change, params, onSuccess);
 }
 
+//兑换商品
+function change_goods(params, onSuccess) {
+  
+  netTill.request_post_param(path.change_goods + '/' + params['id'] + '/' + params['number'], params, onSuccess);
+}
 
 // 请求路径
 var path={
@@ -71,6 +76,7 @@ var path={
   check_phone: 'check-phone',
   send_card: 'send-card',
   card_change:'card-change',
+  change_goods:'change-goods',
 }
 
 // 暴露方法
@@ -86,5 +92,6 @@ module.exports = {
   checkPhone: checkPhone,
   send_card: send_card,
   card_change: card_change,
+  change_goods: change_goods,
 }
 

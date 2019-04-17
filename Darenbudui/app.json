@@ -17,7 +17,8 @@
     "pages/exchangedetail/exchangedetail",
     "pages/helpeachotherrecord/helpeachotherrecord",
     "pages/orderlist/orderlist",
-    "pages/rules/rules"
+    "pages/rules/rules",
+    "pages/success/suceess"
   ],
   "window": {
     "backgroundTextStyle": "light",

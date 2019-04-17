@@ -81,6 +81,7 @@ App({
       exchangedetail: "../../pages/exchangedetail/exchangedetail",
       netutil: "../../common/netutil/netutil.js",
       rules: "../../pages/rules/rules",
+      success: "../../pages/success/suceess",
 
     },
     api: '../../common/netutil/API.js',

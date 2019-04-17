@@ -1,0 +1,74 @@
+<!--pages/activitylist/activitylist.wxml-->
+<view class='main'>
+  <van-tabs class='core' active="{{ 0 }}" bind:change="onChange" swipeable sticky color="#00af18">
+    <van-tab title="2币奖品">
+      <view class='content'>
+        <block wx:for='{{list}}' wx:key='{{item.id}}'>
+          <view class='coreItem' data-id='{{item.id}}' data-index='{{index}}' data-cell='{{item}}' bindtap='onClickItem'>
+            <image class='goodimage' src='{{item.gift_img}}'></image>
+            <view class='status'>
+              <image src='{{item.statusimage}}'></image>
+              <text>{{item.status}}</text>
+            </view>
+            <view class='footer'>
+              <view class='info'>
+                <text class='name'>奖品: {{item.gift_name}}</text>
+                <text class='info-poeple'>参与者达到{{item.total_people}}人时自动开奖</text>
+              </view>
+              <view class='footer-right'>
+                <view class='footer-right-top'>{{item.is_join ? "已参加" : "参与抽奖"}}</view>
+                <text class='footer-right-poeple'>{{item.ceil_people + '/' + item.total_people}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </van-tab>
+    <van-tab title="5币奖品">
+      <view class='content'>
+        <block wx:for='{{list}}' wx:key='{{item.id}}'>
+          <view class='coreItem' data-id='{{item.id}}' data-index='{{index}}'  data-cell='{{item}}' bindtap='onClickItem'>
+            <image class='goodimage' src='{{item.gift_img}}'></image>
+            <view class='status'>
+              <image src='{{item.statusimage}}'></image>
+              <text>{{item.status}}</text>
+            </view>
+            <view class='footer'>
+              <view class='info'>
+                <text class='name'>奖品: {{item.gift_name}}</text>
+                <text class='info-poeple'>参与者达到{{item.total_people}}人时自动开奖</text>
+              </view>
+              <view class='footer-right'>
+                <view class='footer-right-top'>{{item.is_join ? "已参加" : "参与抽奖"}}</view>
+                <text class='footer-right-poeple'>{{item.ceil_people + '/' + item.total_people}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </van-tab>
+    <van-tab title="10币奖品">
+      <view class='content'>
+        <block wx:for='{{list}}' wx:key='{{item.id}}'>
+          <view class='coreItem' data-id='{{item.id}}' data-index='{{index}}' data-cell='{{item}}' bindtap='onClickItem'>
+            <image class='goodimage' src='{{item.gift_img}}'></image>
+            <view class='status'>
+              <image src='{{item.statusimage}}'></image>
+              <text>{{item.status}}</text>
+            </view>
+            <view class='footer'>
+              <view class='info'>
+                <text class='name'>奖品: {{item.gift_name}}</text>
+                <text class='info-poeple'>参与者达到{{item.total_people}}人时自动开奖</text>
+              </view>
+              <view class='footer-right'>
+                <view class='footer-right-top'>{{item.is_join ? "已参加" : "参与抽奖"}}</view>
+                <text class='footer-right-poeple'>{{item.ceil_people + '/' + item.total_people}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

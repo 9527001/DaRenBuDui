@@ -2,6 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/activity/activity",
+    "pages/activitylist/activitylist",
+    "pages/activitydetail/activitydetail",
     "pages/exchange/exchange",
     "pages/my/my",
     "pages/logs/logs",
@@ -66,7 +68,6 @@
     "van-stepper": "../../miniprogram_npm/vant-weapp/stepper/index",
     "van-tab": "../../miniprogram_npm/vant-weapp/tab/index",
     "van-tabs": "../../miniprogram_npm/vant-weapp/tabs/index"
-    
     
   }
 }

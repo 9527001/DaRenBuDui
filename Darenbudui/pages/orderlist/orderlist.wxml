@@ -1,11 +1,11 @@
 <!--pages/orderlist/orderlist.wxml-->
 <view class='main'>
-  <view class='tabs'>
+  <!-- <view class='tabs'>
     <view class='left'>兑换订单</view>
     <view class='right'>活动订单</view>
-  </view>
-  <swiper class='swiper'>
-    <swiper-item class="exchange-item" circular="true">
+  </view> -->
+  <van-tabs class="core" active="{{ 0 }}" bind:change="onChange" swipeable sticky color="#00af18">
+    <van-tab title="兑换订单">
       <block wx:for='{{exchagelist}}' wx:key='item.id'>
         <view class='coreItem' data-id='item.id'>
           <view class='item-top'>
@@ -19,38 +19,13 @@
               <text class='content-num'>{{item.goods_num}}</text>
             </view>
           </view>
+          <view class='address'>
+            <text>{{item.real_name + ',' + item.phone +  '\n' +  item.address}}</text>
+          </view>
+          <view class='space'></view>
         </view>
       </block>
-    </swiper-item>
-    <swiper-item class="activity-item" circular="true">
-      <block wx:for='{{activitylist}}'>
-       <view class='coreItem' data-id='item.id'>
-          <view class='item-top'>
-            <text class='top-left'>订单号: {{item.order_no}}</text>
-            <text class='top-right'>{{item.created_at}}</text>
-          </view>
-          <view class='item-middle'>
-            <image class='middle-image' src='{{item.goods_img}}'></image>
-            <view class='middle-content'>
-              <text class='content-title'>{{item.name}}</text>
-              <text class='content-num'>{{item.goods_num}}</text>
-            </view>
-          </view>
-        </view>
-      </block>
-    </swiper-item>
-  </swiper>
+    </van-tab>
+    <van-tab title="活动订单">内容 2</van-tab>
+  </van-tabs>
 </view>
-<!-- "id": 9,
-        "order_no": "20180803162628100246",
-        "goods_num": 1,
-        "order_status": "处理中",
-        "goods_id": 4,
-        "goods_type": 1, // 商品类型 1普通 2折扣
-        "goods_price": 100,
-        "name": "小猪佩奇圆形挎包",
-        "goods_img": "http://clock.weiyingjia.org//images/2018-07-31/201807311807133415.jpg",
-        "real_name": "高连杰",
-        "phone": "18513199372",
-        "address": "北京市通州区新建村二期高层19号楼2单元1501室",
-        "created_at": "2018-08-03" -->

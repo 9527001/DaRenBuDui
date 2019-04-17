@@ -1,0 +1,22 @@
+<!--pages/activitydetail/activitydetail.wxml-->
+<view class='main'>
+
+  <view class='top'>
+    <view class='coreItem'>
+      <image class='goodimage' src='{{info.gift_img}}'></image>
+      <image class='share' src='../../res/general/general-share.png'></image>
+      <view class='status'>
+        <image src='{{info.statusimage}}'></image>
+        <text>{{info.status_text}}</text>
+      </view>
+      <view class='footer'>
+        <text class='name'>奖品: {{info.gift_name}}</text>
+        <view class='bottom'>
+          <text class='bottom-poeple'>参与者达到{{info.total_people}}人时自动开奖</text>
+          <text class='footer-right-people'>{{info.ceil_people + '/' + info.total_people}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>

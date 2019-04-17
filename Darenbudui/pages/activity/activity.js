@@ -1,19 +1,19 @@
 // pages/activity/activity.js
+
+var API = require(getApp().globalData.api);
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activityList: [{
-      id: 0,
-      img: '../../res/activity-3.png',
-      name: '大转盘',
-    }, {
-      id: 1,
-      img: '../../res/activity-2.png',
-      name: '幸运抽奖',
-    }],
+    activityList: [
+      {
+        active_img: "http://f_clockadmin.weiyingjia.org/uploads/2019-03-13/201903131801118839.png",
+        active_name: "幸运抽奖",
+        active_page: "/my-lotto/index",
+      },
+    ],
   },
 
 
@@ -21,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+    this.http();
   },
 
   /**
@@ -74,12 +74,22 @@ Page({
   },
 
   onclickAd: function(event) {
-    var id = event.currentTarget.dataset.id;
+    var indx = event.currentTarget.dataset.index;
     wx.showToast({
 
-      title: event.currentTarget.dataset.item.name,
-    })
-    
- 
-  }
+      title: event.currentTarget.dataset.cell.active_name,
+    });
+    var name = event.currentTarget.dataset.cell.active_name;
+    if (name == '幸运抽奖'){
+      wx.navigateTo({
+        url: getApp().globalData.routes.activitylist,
+      })
+    }
+
+  },
+  http() {
+    API.getActivityList(res => {
+
+    });
+  },
 })

@@ -82,6 +82,9 @@ App({
       netutil: "../../common/netutil/netutil.js",
       rules: "../../pages/rules/rules",
       success: "../../pages/success/suceess",
+      activitylist: "../../pages/activitylist/activitylist",
+      activitydetail: "../../pages/activitydetail/activitydetail",
+
 
     },
     api: '../../common/netutil/API.js',

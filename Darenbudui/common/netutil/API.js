@@ -62,6 +62,28 @@ function change_goods(params, onSuccess) {
   
   netTill.request_post_param(path.change_goods + '/' + params['id'] + '/' + params['number'], params, onSuccess);
 }
+// 获取积分订单列表
+function getMyExchangeOrder(onSuccess) {
+  netTill.request_get(path.pointorders, onSuccess);
+}
+
+//活动列表
+function getActivityList(onSuccess) {
+  netTill.request_get(path.activity_list, onSuccess);
+}
+//幸运抽奖列表
+function getLuckList(type,onSuccess) {
+  var params = { 'type': type };//抽奖类型 1:2达人币 2:5达人币 3:10达人币
+  netTill.request_get_param(path.luck, params, onSuccess);
+}
+//幸运抽奖详情
+function getLuckInfo(id, onSuccess) {
+  var params = { 'id': id };//id	number	幸运抽奖id
+  netTill.request_get_param(path.luck_info, params, onSuccess);
+}
+
+
+
 
 // 请求路径
 var path={
@@ -77,6 +99,10 @@ var path={
   send_card: 'send-card',
   card_change:'card-change',
   change_goods:'change-goods',
+  pointorders: 'pointorders',
+  activity_list: 'activity-list',
+  luck:'luck',
+  luck_info:'luck-info',
 }
 
 // 暴露方法
@@ -93,5 +119,9 @@ module.exports = {
   send_card: send_card,
   card_change: card_change,
   change_goods: change_goods,
+  getMyExchangeOrder: getMyExchangeOrder,
+  getActivityList: getActivityList,
+  getLuckList: getLuckList,
+  getLuckInfo: getLuckInfo,
 }
 

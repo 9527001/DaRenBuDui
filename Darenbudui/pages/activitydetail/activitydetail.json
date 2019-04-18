@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+   "moneytoprize": "../../component/moneytoprize/moneytoprize",
+   "prizenote":"../../component/prizenote/prizenote"
+   },
   "navigationBarTitleText": "幸运抽奖"
 }

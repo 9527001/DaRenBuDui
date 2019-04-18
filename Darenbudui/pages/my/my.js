@@ -154,6 +154,11 @@ Page({
           url: getApp().globalData.routes.rankinglist,
         })
         break;
+      case 5: //我的抽奖
+        wx.navigateTo({
+          url: getApp().globalData.routes.myprize,
+        })
+        break;
       case 6: //互助记录
         wx.navigateTo({
           url: getApp().globalData.routes.helpEachOtherRecord,

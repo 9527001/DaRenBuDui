@@ -89,3 +89,175 @@ page {
   font-size: 24rpx;
   color: #7c767d;
 }
+
+/* 抽奖信息  */
+/* 进行中 */
+.prizeInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 2px 2px #e3dde4;
+  margin-top: 20rpx;
+  margin-bottom: 32rpx;
+  background-color: white;
+}
+.prizeInfo .price {
+  font-size: 26rpx;
+  margin-top: 32rpx;
+}
+
+.prizeInfo .people {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32rpx;
+}
+.people .people_title {
+  font-size: 50rpx;
+}
+.people .people_number {
+  font-size: 70rpx;
+}
+
+/* .prizeInfo  */
+.award {
+  height: 80rpx;
+  width: 400rpx;
+  background-color: #e4dee5;
+  border-radius: 40rpx;
+  margin-top: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+/* .prizeInfo  */
+.award_toget{
+  height: 80rpx;
+  width: 400rpx;
+  background-color: #fd804d;
+  border-radius: 40rpx;
+  margin-top: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+  box-shadow: 1px 1px 1px 1px #fed0bc;
+}
+/* .prizeInfo */
+ .notes {
+  color: #a9a3a9;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  margin-bottom: 32rpx;
+  text-align: center;
+}
+/* 未获奖 */
+.prizeInfo_award_no {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 2px 2px #e3dde4;
+  margin-top: 20rpx;
+  margin-bottom: 32rpx;
+  background-color: white;
+}
+.prizeInfo_award_no .prize_title {
+  margin-top: 32rpx;
+  font-size: 50rpx;
+}
+.prizeInfo_award_no .prize_status {
+  margin-top: 32rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 32rpx;
+}
+/* 抽奖完成 中奖 */
+.prizeInfo_award_success {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 2px 2px #e3dde4;
+  margin-top: 20rpx;
+  margin-bottom: 32rpx;
+  background-color: white;
+  padding: 32rpx 16rpx;
+}
+
+.prizeInfo_award_success .consignee-information{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50rpx;
+}
+.consignee-information input {
+  width: 100%;
+  margin-bottom: 20 rpx;
+  height: 100rpx;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 30rpx;
+  
+}
+.consignee-information text {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #fd792a;
+}
+
+/* 抽奖完成 已领奖 */
+.prizeInfo_award_has_reveived {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 2px 2px #e3dde4;
+  margin-top: 20rpx;
+  margin-bottom: 32rpx;
+  background-color: white;
+  padding: 32rpx 16rpx;
+}
+.prizeInfo_award_has_reveived_title {
+  font-size: 50rpx;
+  color: #fd7331;
+}
+.prizeInfo_award_has_reveived_notes {
+  margin-top: 16rpx;
+  font-size: 30rpx;
+}
+
+
+/* 介绍 */
+.introduce {
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 2px 2px #e3dde4;
+  margin-bottom: 32rpx;
+  padding: 32rpx 16rpx;
+  background-color: white;
+}
+ .introduce-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.introduce-title .introduce-title-content {
+  font-size: 32rpx;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+}
+.introduce-title image {
+  width: 115rpx;
+  height: 9rpx;
+}
+
+.introduce .content {
+  font-size: 26rpx;
+} 

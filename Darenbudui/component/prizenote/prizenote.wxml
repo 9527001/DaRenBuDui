@@ -1,0 +1,8 @@
+<!--component/prizenote/prizenote.wxml-->
+<view class='mask-container' hidden='{{isHiddenMask}}'>
+  <view class='model-mask' catchtap='onMaskClick' catchtouchmove='preventTouchMove'></view>
+  <view class='model-dialog' catchtouchmove='preventTouchMove'>
+    <image class='bg' src='{{type ? "../../res/activity/activity-result-success.png" : "../../res/activity/activity-result-fail.png"}}'></image>
+    <view class='confirm' catchtap='onClickConfirm'></view>
+  </view>
+</view>

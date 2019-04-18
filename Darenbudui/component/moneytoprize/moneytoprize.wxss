@@ -1,0 +1,86 @@
+/* component/moneytoprize/moneytoprize.wxss */
+
+.mask-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.model-mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.model-dialog {
+  position: absolute;
+  /* left: 48rpx;
+  right: 48rpx; */
+  width: 534rpx;
+  height: 673rpx;
+  left: 50%;
+  margin-left: -267rpx;
+  top: 300rpx;
+  /* background-color: white; */
+  border-radius: 20rpx;
+  /* height: 500rpx; */
+}
+
+.bg {  
+  width: 100%;
+  height: 100%;
+}
+
+.money {
+  position: absolute;
+  bottom: 180rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  width: 100%;
+
+}
+
+.money .number {
+  
+  font-weight: bold;
+}
+
+.button {
+  width: 100%;
+  height: 80rpx;
+  position: absolute;
+  bottom: 48rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.button .cancle {
+  
+  height: 80rpx;
+  width: 200rpx;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border: 1px solid #feec34;
+  color: #feec34;
+}
+.button .confirm {
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #feec34;
+  color: #fc4e31;
+}
+
+
+
+

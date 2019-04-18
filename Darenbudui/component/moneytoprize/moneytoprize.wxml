@@ -1,0 +1,16 @@
+<!--component/moneytoprize/moneytoprize.wxml-->
+<view class='mask-container' hidden='{{isHiddenMask}}'>
+  <view class='model-mask' bindtap='onMaskClick' catchtouchmove='preventTouchMove'></view>
+  <view class='model-dialog' catchtouchmove='preventTouchMove'>
+    <image class='bg' src='../../res/activity/activity-lotto-bg-1.png'></image>
+    <view class='money'>
+      <text>确定扣除</text>
+      <text class='number'>{{money}}达人币</text>
+      <text>参与抽奖吗？</text>
+    </view>
+    <view class='button'>
+      <view class='cancle' bindtap='onClickCanCle'>取消</view>
+      <view class='confirm' bindtap='onClickConfirm'>确定</view>
+    </view>
+  </view>
+</view>

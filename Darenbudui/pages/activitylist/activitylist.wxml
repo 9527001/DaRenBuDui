@@ -5,7 +5,7 @@
       <view class='content'>
         <block wx:for='{{list}}' wx:key='{{item.id}}'>
           <view class='coreItem' data-id='{{item.id}}' data-index='{{index}}' data-cell='{{item}}' bindtap='onClickItem'>
-            <image class='goodimage' src='{{item.gift_img}}'></image>
+            <image class='goodimage' src='{{item.gift_img}}' mode='aspectFill'></image>
             <view class='status'>
               <image src='{{item.statusimage}}'></image>
               <text>{{item.status}}</text>
@@ -16,8 +16,8 @@
                 <text class='info-poeple'>参与者达到{{item.total_people}}人时自动开奖</text>
               </view>
               <view class='footer-right'>
-                <view class='footer-right-top'>{{item.is_join ? "已参加" : "参与抽奖"}}</view>
-                <text class='footer-right-poeple'>{{item.ceil_people + '/' + item.total_people}}</text>
+                <view class='{{item.is_join ? "footer-right-top-joined" : "footer-right-top"}}'>{{item.join_text}}</view>
+                <text class='footer-right-poeple'>{{item.all_participate_people + '/' + item.total_people}}</text>
               </view>
             </view>
           </view>
@@ -28,7 +28,7 @@
       <view class='content'>
         <block wx:for='{{list}}' wx:key='{{item.id}}'>
           <view class='coreItem' data-id='{{item.id}}' data-index='{{index}}'  data-cell='{{item}}' bindtap='onClickItem'>
-            <image class='goodimage' src='{{item.gift_img}}'></image>
+            <image class='goodimage' src='{{item.gift_img}}' mode='aspectFill'></image>
             <view class='status'>
               <image src='{{item.statusimage}}'></image>
               <text>{{item.status}}</text>
@@ -39,8 +39,8 @@
                 <text class='info-poeple'>参与者达到{{item.total_people}}人时自动开奖</text>
               </view>
               <view class='footer-right'>
-                <view class='footer-right-top'>{{item.is_join ? "已参加" : "参与抽奖"}}</view>
-                <text class='footer-right-poeple'>{{item.ceil_people + '/' + item.total_people}}</text>
+                <view class='{{item.is_join ? "footer-right-top-joined" : "footer-right-top"}}'>{{item.join_text}}</view>
+                <text class='footer-right-poeple'>{{item.all_participate_people + '/' + item.total_people}}</text>
               </view>
             </view>
           </view>
@@ -51,7 +51,7 @@
       <view class='content'>
         <block wx:for='{{list}}' wx:key='{{item.id}}'>
           <view class='coreItem' data-id='{{item.id}}' data-index='{{index}}' data-cell='{{item}}' bindtap='onClickItem'>
-            <image class='goodimage' src='{{item.gift_img}}'></image>
+            <image class='goodimage' src='{{item.gift_img}}' mode='aspectFill'></image>
             <view class='status'>
               <image src='{{item.statusimage}}'></image>
               <text>{{item.status}}</text>
@@ -62,8 +62,8 @@
                 <text class='info-poeple'>参与者达到{{item.total_people}}人时自动开奖</text>
               </view>
               <view class='footer-right'>
-                <view class='footer-right-top'>{{item.is_join ? "已参加" : "参与抽奖"}}</view>
-                <text class='footer-right-poeple'>{{item.ceil_people + '/' + item.total_people}}</text>
+                <view class='{{item.is_join ? "footer-right-top-joined" : "footer-right-top"}}'>{{item.join_text}}</view>
+                <text class='footer-right-poeple'>{{item.all_participate_people + '/' + item.total_people}}</text>
               </view>
             </view>
           </view>

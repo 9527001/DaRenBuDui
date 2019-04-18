@@ -93,6 +93,18 @@ page {
   margin-bottom: 16rpx;
 }
 
+.footer-right .footer-right-top-joined {
+  width: 160rpx;
+  height: 50rpx;
+  background-color: #dcdcdc;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 25rpx;
+  color: white;
+  font-size: 28rpx;
+  margin-bottom: 16rpx;
+
+}
 .footer-right .footer-right-poeple {
   font-size: 24rpx;
 }

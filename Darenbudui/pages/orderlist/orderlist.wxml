@@ -1,9 +1,5 @@
 <!--pages/orderlist/orderlist.wxml-->
 <view class='main'>
-  <!-- <view class='tabs'>
-    <view class='left'>兑换订单</view>
-    <view class='right'>活动订单</view>
-  </view> -->
   <van-tabs class="core" active="{{ 0 }}" bind:change="onChange" swipeable sticky color="#00af18">
     <van-tab title="兑换订单">
       <block wx:for='{{exchagelist}}' wx:key='item.id'>

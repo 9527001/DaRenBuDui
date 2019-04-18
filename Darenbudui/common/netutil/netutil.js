@@ -60,7 +60,8 @@ function request(url, params, method, onStart, onSuccess, onFailed) {
     },
     success: function(res) {
       var status_code = res.statusCode;
-      if(status_code == 200) {
+      if(status_code == 200 ||
+        status_code == 201) {
         onSuccess(res.data); 
       }else{
         wx.showToast({

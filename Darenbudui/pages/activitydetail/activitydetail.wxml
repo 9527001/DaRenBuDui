@@ -4,7 +4,7 @@
   <view class='top'>
     <view class='coreItem'>
       <image class='goodimage' src='{{info.gift_img}}'></image>
-      <image class='share' src='../../res/general/general-share.png'></image>
+      <image class='share' src='../../res/general/general-share.png' bindtap='onClickShare'></image>
       <view class='status'>
         <image src='{{info.statusimage}}'></image>
         <text>{{info.status_text}}</text>
@@ -13,10 +13,81 @@
         <text class='name'>奖品: {{info.gift_name}}</text>
         <view class='bottom'>
           <text class='bottom-poeple'>参与者达到{{info.total_people}}人时自动开奖</text>
-          <text class='footer-right-people'>{{info.ceil_people + '/' + info.total_people}}</text>
-          </view>
+          <text class='footer-right-people'>{{info.total_people - info.ceil_people + '/' + info.total_people}}</text>
         </view>
       </view>
     </view>
-
   </view>
+  <!-- 抽奖进行中 -->
+  <block wx:if="{{info.prize_type == 1 || info.prize_type == 2}}">
+    <view class='prizeInfo'>
+      <text class='price'>{{info.gift_type_text}}达人币参与抽奖</text>
+      <view class='people'>
+        <text class='people_title'>已有</text>
+        <text class='people_number'>{{info.ceil_people}}</text>
+        <text class='people_title'>人参与</text>
+      </view>
+      <view class='{{info.prize_type == 1 ? "award_toget" : "award"}}' bindtap='{{info.prize_type == 1 ? "onClickToGetPrize" : ""}}'>{{info.prize_type == 1 ? "我要抽奖" : "待开奖"}}</view>
+      <view class='notes'>开奖后奖品有效期为5天，过期视为自动放弃</view>
+    </view>
+  </block>
+  <!-- 抽奖结束 未中奖 -->
+  <block wx:if="{{info.prize_type == 3}}">
+    <view class='prizeInfo_award_no'>
+      <text class='prize_title'>很遗憾</text>
+      <text class='prize_status'>本次没有获奖</text>
+    </view>
+  </block>
+  <!-- 抽奖结束 中奖 未领取-->
+  <block wx:if="{{info.prize_type == 4}}">
+    <view class='prizeInfo_award_success'>
+      <view class='introduce-title'>
+        <image class='left' src='../../res/activity/activity-to-left.png'></image>
+        <text class='introduce-title-content'>收货信息</text>
+        <image class='right' src='../../res/activity/activity-to-right.png'></image>
+      </view>
+      <view class='consignee-information'>
+        <input placeholder='请填写姓名' bindinput='onMonitorName'></input>
+        <input placeholder='请填写手机号' maxlength='11' type='number' bindinput='onMonitorPhone'></input>
+        <input placeholder='请填写收货地址' bindinput='onMonitorAddress'></input>
+        <text>*以.上信息请如实填写，否则可能会影响我们发送奖品</text>
+      </view>
+      <view class='{{control.receive_enable ? "award_toget" : "award"}}' bindtap='{{control.receive_enable ? "onClickToReceivePrize" : ""}}'>立即领取</view>
+      <view class='notes'>奖品在开奖后5天内领取，过期视为自动放弃</view>
+    </view>
+  </block>
+
+    <!-- 抽奖结束 中奖 已领取-->
+  <block wx:if="{{info.prize_type == 5}}">
+    <view class='prizeInfo_award_has_reveived'>
+      <text class='prizeInfo_award_has_reveived_title'>恭喜您</text>
+      <text class='prizeInfo_award_has_reveived_notes'>获得本次大奖</text>
+      <view class='award'>已领奖</view>
+      <text class='notes'>*请时刻关注开奖信息，奖品在开奖后5天内领取，\n过期视为自动放弃</text>
+    </view>
+  </block>
+
+  <block wx:if='{{info.prize_type != 4}}'>
+    <view class='introduce'>
+      <view class='introduce-title'>
+        <image class='left' src='../../res/activity/activity-to-left.png'></image>
+        <text class='introduce-title-content'>活动介绍</text>
+        <image class='right' src='../../res/activity/activity-to-right.png'></image>
+      </view>
+      <rich-text class='content' nodes="{{info.active_desc}}"></rich-text>
+    </view>
+    <view class='introduce'>
+      <view class='introduce-title'>
+        <image class='left' src='../../res/activity/activity-to-left.png'></image>
+        <text class='introduce-title-content'>奖品介绍</text>
+        <image class='right' src='../../res/activity/activity-to-right.png'></image>
+      </view>
+      <rich-text class='content' nodes="{{info.gift_desc}}" />
+    </view>
+  </block>
+  <!-- 消费达人币弹窗 -->
+  <moneytoprize id="moneytoprize" money="{{info.gift_type_text}}" bind:onClickConfirm="onClickConfirm"></moneytoprize>
+  <!-- 中奖提示弹窗 -->
+  <prizenote id="prizenote" type="{{info.success}}" bind:onClickConfirm="onClickConirmAtPrize"></prizenote>
+
+</view>

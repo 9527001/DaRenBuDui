@@ -1,0 +1,8 @@
+<!--pages/getprizesuccess/getprizesuccess.wxml-->
+<view class='main'>
+  <image  src='../../res/activity/activity-success-getprize.png' mode='aspectFill'></image>
+  <text class='title'>领取成功！</text>
+  <text class='notes'>恭喜你领取奖品成功，我们将安排人员\n尽快为你发货。</text>
+  <view class='confirm' bindtap='onClickAtHome'>返回首页</view>
+
+</view>

@@ -73,6 +73,7 @@ App({
     },
     baseUrl: "http://daka.weiyingjia.org", // 网络接口全局变量
     routes: {
+      home: "../../pages/home/home",
       share: '../../pages/share/share',
       signIn: "../../pages/sign-in/sign-in",
       rankinglist: "../../pages/rankinglist/rankinglist",
@@ -84,7 +85,8 @@ App({
       success: "../../pages/success/suceess",
       activitylist: "../../pages/activitylist/activitylist",
       activitydetail: "../../pages/activitydetail/activitydetail",
-
+      getprizesuccess: "../../pages/getprizesuccess/getprizesuccess",
+      myprize: "../../pages/myprize/myprize",
 
     },
     api: '../../common/netutil/API.js',

@@ -1,0 +1,41 @@
+/* pages/getprizesuccess/getprizesuccess.wxss */
+
+page {
+  height: 100%;
+  background-color: white;
+}
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main image {
+  width: 144rpx;
+  height: 144rpx;
+  margin-top: 60rpx;
+  margin-left: -10rpx;
+}
+.title {
+  font-size: 36rpx;
+  margin-top: 25rpx;
+  text-align: center;
+}
+.notes {
+ font-size: 26rpx;
+ color: #9d9d9d;
+ margin-top: 32rpx;
+ text-align: center;
+}
+
+.confirm {
+  margin-top: 60rpx;
+  width: 370rpx;
+  height: 90rpx;
+  border: 1px solid #969696;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  text-align: center;
+}

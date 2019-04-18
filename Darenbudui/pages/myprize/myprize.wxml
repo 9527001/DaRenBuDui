@@ -1,0 +1,77 @@
+<!--pages/myprize/myprize.wxml-->
+
+
+<van-tabs class="main" active="{{ 0 }}" bind:change="onChange" swipeable sticky color="#ff7831">
+  <van-tab class="item" title="进行中">
+    <block wx:for='{{list}}' wx:key='{{item.luck_id}}' wx:if="{{list.length > 0}}">
+      <view class='coreItem' data-id='{{item.luck_id}}' bindtap='onClickItem'>
+        <view class='item-top'>
+          <text class='top-right'>待开奖</text>
+          <image src='../../res/my-arrow-right.png'></image>
+        </view>
+        <view class='line'></view>
+        <view class='item-middle'>
+          <image class='middle-image' src='{{item.gift_img}}'></image>
+          <view class='middle-content'>
+            <text class='content-title'>{{item.gift_name}}</text>
+            <text class='content-num'>参赛者达到{{item.total_people}}人自动开奖</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{list.length == 0}}">
+      <view class='no-data'>
+        <image src='../../res/general/general-list-no.png.png'></image>
+        <text>您还未参加抽奖</text>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab class="item" title="未中奖">
+    <block wx:for='{{list}}' wx:key='{{item.luck_id}}' wx:if="{{list.length > 0}}">
+      <view class='coreItem' data-id='{{item.luck_id}}' bindtap='onClickItem'>
+        <view class='item-top'>
+          <text class='top-right'>未中奖</text>
+          <image src='../../res/my-arrow-right.png'></image>
+        </view>
+        <view class='line'></view>
+        <view class='item-middle'>
+          <image class='middle-image' src='{{item.gift_img}}'></image>
+          <view class='middle-content'>
+            <text class='content-title'>{{item.gift_name}}</text>
+            <text class='content-num'>参赛者达到{{item.total_people}}人自动开奖</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{list.length == 0}}">
+      <view class='no-data'>
+        <image src='../../res/general/general-list-no.png.png'></image>
+        <text>您还未参加抽奖</text>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab class="item" title="已中奖">
+    <block wx:for='{{list}}' wx:key='{{item.luck_id}}' wx:if="{{list.length > 0}}">
+      <view class='coreItem' data-id='{{item.luck_id}}' bindtap='onClickItem'>
+        <view class='item-top'>
+          <text class='top-right'>已中奖</text>
+          <image src='../../res/my-arrow-right.png'></image>
+        </view>
+        <view class='line'></view>
+        <view class='item-middle'>
+          <image class='middle-image' src='{{item.gift_img}}'></image>
+          <view class='middle-content'>
+            <text class='content-title'>{{item.gift_name}}</text>
+            <text class='content-num'>参赛者达到{{item.total_people}}人自动开奖</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{list.length == 0}}">
+      <view class='no-data'>
+        <image src='../../res/general/general-list-no.png'></image>
+        <text>您还未参加抽奖</text>
+      </view>
+    </block>
+  </van-tab>
+</van-tabs>

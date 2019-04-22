@@ -2,11 +2,11 @@
   "pages": [
     "pages/home/home",
     "pages/activity/activity",
+    "pages/exchange/exchange",
+    "pages/my/my",
     "pages/activitylist/activitylist",
     "pages/activitydetail/activitydetail",
     "pages/getprizesuccess/getprizesuccess",
-    "pages/exchange/exchange",
-    "pages/my/my",
     "pages/logs/logs",
     "pages/sign-in/sign-in",
     "pages/sign-in-rules/sign-in-rules",
@@ -22,8 +22,9 @@
     "pages/orderlist/orderlist",
     "pages/rules/rules",
     "pages/myprize/myprize",
-    "pages/success/suceess"
-
+    "pages/success/suceess",
+    "pages/sharesteps/sharestep",
+    "pages/webview/webview"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -71,6 +72,8 @@
     "van-stepper": "../../miniprogram_npm/vant-weapp/stepper/index",
     "van-tab": "../../miniprogram_npm/vant-weapp/tab/index",
     "van-tabs": "../../miniprogram_npm/vant-weapp/tabs/index"
-    
-  }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx842eb63f11a4aaaa"
+  ]
 }

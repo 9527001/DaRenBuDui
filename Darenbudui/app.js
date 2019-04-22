@@ -1,5 +1,6 @@
 //app.js
 
+
 App({
   onLaunch: function() {
     // 展示本地存储能力
@@ -33,9 +34,21 @@ App({
             this.globalData.userInfo = data;
             console.log(this.globalData.userInfo);
 
-            if (this.userInfoReadyCallback) {
-              this.userInfoReadyCallback(res)
-            }
+            //微信运动数据
+            var that = this;
+            wx.getWeRunData({
+              success(res) {
+                const encryptedData = res.encryptedData
+                console.log('微信运动数据',res);
+                that.globalData.userInfo.iv = res.iv;
+                that.globalData.userInfo.encryptedData = res.encryptedData;
+                if (that.userInfoReadyCallback) {
+                  that.userInfoReadyCallback(res)
+                }
+              }
+            })
+
+           
           },
           fail: function(res) {
             console.log("登录失败", res);
@@ -70,6 +83,9 @@ App({
   globalData: {
     userInfo: {
       point: '0.00', //达人币余额
+      iv:'',
+      encryptedData: '',
+
     },
     baseUrl: "http://daka.weiyingjia.org", // 网络接口全局变量
     routes: {
@@ -87,9 +103,21 @@ App({
       activitydetail: "../../pages/activitydetail/activitydetail",
       getprizesuccess: "../../pages/getprizesuccess/getprizesuccess",
       myprize: "../../pages/myprize/myprize",
+      sharesteps:"../../pages/sharesteps/sharestep",
+      webview:"../../pages/webview/webview",
 
     },
     api: '../../common/netutil/API.js',
+    invitefriend:{
+      title: '人生没有白走的路，每一步都是必经之路',
+      imageUrl: "http://dakadmin.weiyingjia.org/uploads/2018-10-11/201810111425124222.png",//图片地址
+      path: "pages/home/home",// 用户点击首先进入的当前页面
+    },
+    invitefriendfor_step: {
+      title: '人生没有白走的路，每一步都是必经之路',
+      imageUrl: "http://dakadmin.weiyingjia.org/uploads/2018-10-11/201810111425124222.png",//图片地址
+      path: "pages/home/home?type=1",// 用户点击首先进入的当前页面
+    }
 
   },
 })

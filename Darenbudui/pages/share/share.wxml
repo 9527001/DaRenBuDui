@@ -9,7 +9,7 @@
           <view class='text'>
             <text class='name'>{{name}}</text>
             <text class='appname'>{{appname}}</text>
-            <text class='appname'>{{stepsalltoday}}</text>
+            <text class='appname'>今日总步数{{stepsalltoday}}步</text>
             <text class='appname'>排名第{{rank}}名，请送我上去</text>
           </view>
           <image class='linkimage' src='{{linkimage}}' model="aspectFit"></image>

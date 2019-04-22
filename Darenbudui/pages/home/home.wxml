@@ -1,36 +1,68 @@
+<import src="../../pages/template/signin.wxml" />
 <view class="home">
+  <block wx:if="{{!list.isSignin}}">
+    <view class='sign_in_alert'>
+      <template is="test"> </template>
+    </view>
+  </block>
+
   <view class='top'>
-    <image class='top-bg' src='../../res/bg-index.png'></image>
+    <view class='top-bg-scroll' animation="{{bg_animation}}" bindtransitionend="bg_animation_end" style='transform:translateX({{marquee}}px)'>
+      <image src='../../res/bg-index.png'></image>
+      <image src='../../res/bg-index.png'></image>
+    </view>
+    <!-- <image class='top-bg' src='../../res/bg-index.png'></image> -->
     <view class='all-step'>
       <image src='../../res/logo-top-left.png'></image>
-      <text>{{info.point}}</text>
+      <text>{{stepinfo.point}}</text>
     </view>
     <view class='today-step'>
       <image src='../../res/step-top-right.png'></image>
-      <text>6739</text>
+      <text>{{stepinfo.step}}</text>
     </view>
-    <view class='new-step'>
-      <image src='../../res/bubble-bg.png'></image>
-      <text>0.39</text>
+    <view class='pop'>
+      <view class='pop-item' bindtap='onClickInStep' animation="{{popanimation}}" wx:if="{{stepinfo.bubble.step > 0}}">
+        <text>行走</text>
+        <view class='pop-pop'>
+          <image src='../../res/bubble-bg.png'></image>
+          <view class='popnumber'>{{stepinfo.bubble.step}}</view>
+        </view>
+      </view>
+      <view class='pop-item' bindtap='onClickInSign' animation="{{popanimation}}" wx:if="{{stepinfo.bubble.sign > 0}}">
+        <text>签到</text>
+        <view class='pop-pop'>
+          <image src='../../res/bubble-bg.png'></image>
+          <view class='popnumber'>{{stepinfo.bubble.sign}}</view>
+        </view>
+      </view>
+      <view class='pop-item' bindtap='onClickInSend' animation="{{popanimation}}" hidden='{{flag}}' wx:if="{{stepinfo.bubble.send > 0}}">
+        <text>赠送</text>
+        <view class='pop-pop'>
+          <image src='../../res/bubble-bg.png'></image>
+          <view class='popnumber'>{{stepinfo.bubble.send}}</view>
+        </view>
+      </view>
     </view>
-    <image class='top-people' src='../../res/people.gif'></image>
+    <image class='top-people' src='../../res/people.gif' hidden='{{peopleisHidden}}' bindtap='onclickPeople'></image>
+    <image class='top-people-tmp' src='../../res/people.png' hidden='{{!peopleisHidden}}'></image>
   </view>
   <view class='more'>
     <block wx:for='{{itemArr}}' wx:key="id">
       <!-- data-*属性在触发事件时获取  -->
-      <view class='more-item' bindtap='onclickitem' data-id='{{item.id}}'>
+      <button class='more-item' bindtap='onclickitem' data-id='{{item.id}}' open-type='{{item.id == 2 ? "share" : ""}}'>
         <!-- 图片 -->
         <image src='{{item.img ? item.img : "../../res/activity-2.png"}}' class='more-img' mode='aspectFill' />
         <!-- 标题 -->
         <text>{{item.title}}</text>
-      </view>
+      </button>
+
     </block>
   </view>
-<!-- banner -->
-  <view class='banner'  wx:if="{{bannerArr.length > 0}}">
+  <!-- banner -->
+  <view class='banner' wx:if="{{bannerArr.length > 0}}">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color='#ff0000' indicator-color='#f5f5f5'>
-      <block wx:for="{{bannerArr}}" wx:key="id">
-        <swiper-item class="swiper-item">
+      <block wx:for="{{bannerArr}}" wx:key="{{item}}">
+        <swiper-item class="swiper-item" bindtap='onClickBannerAtItem' data-item="{{item}}">
           <image src="{{item.img}}" class="slide-image" model="aspectFit" />
         </swiper-item>
       </block>
@@ -57,7 +89,7 @@
           <view class='b'>
             <image src='../../res/icons_06.png' class='b-icon' catchtap='deleteCollection' data-pos='{{index}}' />
             <view class='price'>{{item.type==2 ? item.price + '币' :item.price}}</view>
-            
+
           </view>
           <view class='exchange'>
             <button bindtap="clickOnExchange">免费兑换</button>
@@ -66,4 +98,7 @@
       </block>
     </view>
   </view>
+
+  <!-- 签到成功 -->
+  <signinsuccess id='signinsuccess' step='{{signininfo.sign_step}}' cardnumber='{{signininfo.card_name}}' bind:onClickCancle='onClickSignSuccess'></signinsuccess>
 </view>

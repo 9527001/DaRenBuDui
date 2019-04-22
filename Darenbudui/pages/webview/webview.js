@@ -1,21 +1,22 @@
-// pages/helpeachotherrecord/helpeachotherrecord.js
-// 互助记录
-var API = require(getApp().globalData.api);
+// pages/webview/webview.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    "data": [
-    ],
+    title: '',
+    url: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.http();
+    this.setData({
+      ['title']: options.title,
+      ['url']: options.url,
+    })
   },
 
   /**
@@ -65,12 +66,5 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-  http() {
-    API.send_step_history(res => {
-      this.setData({
-        data:res.data
-      })
-    })  
-  },
+  }
 })

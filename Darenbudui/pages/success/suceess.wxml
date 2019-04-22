@@ -1,12 +1,26 @@
 <!--pages/success/suceess.wxml-->
 <view class='main'>
-  <view class='top'>
-    <image class='bg' src='../../res/success/success-i-buy.png' mode='aspectFill'></image>
-    <view class='notes'>
-      <image  src='../../res/success/success-icon.png' mode='aspectFill'></image>
-      <text>兑换成功!</text>
+  <!-- 赞助成功 -->
+  <block wx:if='{{type == 1}}'>
+    <view class='top'>
+      <image class='bg' src='../../res/share/share-step-success-bg.png' mode='aspectFill'></image>
+      <view class='notes'>
+        <image src='../../res/success/success-icon.png' mode='aspectFill'></image>
+        <text>赞助成功!</text>
+      </view>
+      <view class='share-step' bindtap='backtohome'>我也要换</view>
     </view>
-  </view>
+  </block>
+  <block wx:else>
+    <view class='top'>
+      <image class='bg' src='../../res/success/success-i-buy.png' mode='aspectFill'></image>
+      <view class='notes'>
+        <image src='../../res/success/success-icon.png' mode='aspectFill'></image>
+        <text>兑换成功!</text>
+      </view>
+    </view>
+  </block>
+
   <view class='goods'>
     <view class='list'>
       <block wx:for='{{tradeList}}' wx:key="id">

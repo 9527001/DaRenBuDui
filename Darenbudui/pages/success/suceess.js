@@ -8,13 +8,21 @@ Page({
    */
   data: {
     tradeList:[],
+    type: 0,// 1赞助成功
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.http();
+    
+    if(options.type == 1){
+        this.setData({
+          ['type']:1
+        })
+    }
+     this.http();
+    
   },
 
   /**
@@ -85,6 +93,12 @@ Page({
     console.log(event);
     wx.navigateTo({
       url: getApp().globalData.routes.exchangedetail + '?id=' + id + '&goods_type=' + goods_type,
+    })
+  },
+  // 回到首页
+  backtohome(){
+    wx.reLaunch({
+      url: getApp().globalData.routes.home
     })
   },
 })

@@ -44,6 +44,7 @@
   <!-- 底部背景图片 -->
   <image class='bg-image-bottom' src='../../res/sign-in/sign-in-bg1-X.png'></image>
   <supplement id='supplement' content='{{"是否花费" + list.repair+ "步补签"}}' bind:onclickConfirm='clickConfirm'></supplement>
+  <!-- 签到成功 -->
   <signinsuccess id='signinsuccess' step='{{signininfo.sign_step}}' cardnumber='{{signininfo.card_name}}' bind:onClickCancle='onClickSignSuccess'></signinsuccess>
 
 

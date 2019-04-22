@@ -120,8 +120,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return getApp().globalData.invitefriend;
   },
+
+  // 页面中部按钮点击
   onClickItem: function(event) {
     var ID = event.currentTarget.dataset.id;
     switch (ID) {
@@ -132,9 +134,7 @@ Page({
         break;
       case 1: //邀请好友
         {
-          wx.showShareMenu({
-            withShareTicket: true
-          });
+          
         }
         break;
       case 2: //我的订单

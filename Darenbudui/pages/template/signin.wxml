@@ -1,0 +1,12 @@
+<template name="test">
+  <view class='core'>
+    <view class='close'>
+      <image src='../../res/sign-in/signin-close.png' bindtap='onClickCancle'></image>
+    </view>
+    <view class='middle'>
+      <image class='bg' src='../../res/sign-in/signin-bg.png'></image>
+      <image class='open-bg' src='../../res/sign-in/signin-open-bg.png'></image>
+    </view>
+    <image class='signin' src='../../res/sign-in/signin-btn-open.png' bindtap='onClickAtSignin'></image>
+  </view>
+</template>

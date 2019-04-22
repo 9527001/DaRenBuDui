@@ -114,9 +114,66 @@ function get_rize(id, real_name, phone, address, onSuccess) {
 //我的抽奖
 function getMyLuck(type, onSuccess) {
   var params = {
-    'type': type//类型 1进行中 3未中奖 2已中奖
-  };  
+    'type': type //类型 1进行中 3未中奖 2已中奖
+  };
   netTill.request_get_param(path.my_luck, params, onSuccess);
+}
+
+//获取交换步数信息
+function get_share_info(open_id, onSuccess) {
+  var params = {
+    'open_id': open_id //open_id	string	请求赠送人open_id
+  };
+  netTill.request_get_param(path.get_send_step_data, params, onSuccess);
+}
+
+//赠送步数
+function share_step(step, send_user_id, onSuccess) {
+  var params = {
+    'step': step, //step	number	要赠送的步数
+    'send_user_id': send_user_id, //send_user_id	number	受益人id
+  };
+  netTill.request_post_param(path.send_step, params, onSuccess);
+}
+
+// 分享出去的信息
+function share_for_step(selfID) {
+  return {
+    title: '人生没有白走的路，每一步都是必经之路',
+    imageUrl: "http://dakadmin.weiyingjia.org/uploads/2018-10-11/201810111425124222.png", //图片地址
+    path: "/pages/home/home?type=1&userid=" + selfID, // 用户点击首先进入的当前页面
+  };
+}
+
+//生成二维码图片
+function create_qr_code(onSuccess) {
+
+  netTill.request_post(path.create_qr_code, onSuccess);
+}
+
+//互助记录
+function send_step_history(onSuccess) {
+
+  netTill.request_get(path.send_step_history, onSuccess);
+}
+
+// 获取用户步数信息
+function get_user_step(uid, session, iv, encryptData,onSuccess) {
+  var params = {
+    'uid': uid, 
+    'session': session, 
+    'iv': iv, 
+    'encryptData': encryptData, 
+  };
+  netTill.request_post_param(path.get_user_step, params, onSuccess);
+}
+
+// 点击气泡
+function receive_bubble(type, onSuccess) {
+  var params = {
+    'point_type': type,//气泡类型：step(步数) sign(签到) send(受赠) point(跬步生财)
+  };
+  netTill.request_post_param(path.receive_bubble, params, onSuccess);
 }
 
 // 请求路径
@@ -140,7 +197,15 @@ var path = {
   luck_join: 'luck-join',
   get_prize: "write-luck",
   my_luck: "my-luck",
+  get_send_step_data: "get-send-step-data",
+  send_step: "send-step",
+  create_qr_code: "create-qr-code",
+  send_step_history: "send-step-history",
+  get_user_step:"get-user-step",
+  receive_bubble:"receive-bubble",
 }
+
+
 
 // 暴露方法
 module.exports = {
@@ -163,4 +228,11 @@ module.exports = {
   getLuckJoin: getLuckJoin,
   get_rize: get_rize,
   getMyLuck: getMyLuck,
+  get_share_info: get_share_info,
+  share_step: share_step,
+  share_for_step: share_for_step,
+  create_qr_code: create_qr_code,
+  send_step_history: send_step_history,
+  get_user_step: get_user_step,
+  receive_bubble: receive_bubble,
 }

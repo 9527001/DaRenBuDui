@@ -126,14 +126,15 @@ Page({
 
   //签到成功--确认收到
   onClickSignSuccess: function(event) {
-    wx.showToast({
-      title: '已确定',
-    })
+    console.log('签到成功--确认收到');
   },
 
   // 点击补签
   onClickCalendar: function(event) {
     var item = event.currentTarget.dataset.item;
+    if(item.status !=1) {
+      return;
+    }
     this.onSupplement();
     //确定当前点击目标
     var currentIndexTmp = 0;

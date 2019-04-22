@@ -1,21 +1,29 @@
 /* pages/home/home.wxss */
 @import "../../pages/exchange/exchange.wxss";
+@import "../../pages/template/signin.wxss";
 
 /* 顶部 */
+
 .top {
   position: relative;
   width: 100%;
   height: 677rpx;
   background-color: green;
 }
-
-.top-bg {
+.top-bg-scroll {
   position: absolute;
-  width: 100%;
+  width: 200%;
   height: 677rpx;
+
+}
+.top-bg-scroll image {
+  position: relative;
+  width: 50%;
+  height: 100%;
 }
 
 /* 达人步数 */
+
 .all-step {
   position: absolute;
   left: 20rpx;
@@ -23,10 +31,12 @@
   width: 226rpx;
   height: 95rpx;
 }
+
 .all-step image {
   width: 100%;
   height: 100%;
 }
+
 .all-step text {
   position: absolute;
   bottom: 10rpx;
@@ -34,7 +44,9 @@
   font-size: 35rpx;
   color: white;
 }
+
 /* 今日步数 */
+
 .today-step {
   position: absolute;
   right: 20rpx;
@@ -42,10 +54,12 @@
   width: 233rpx;
   height: 111rpx;
 }
+
 .today-step image {
   width: 100%;
   height: 100%;
 }
+
 .today-step text {
   position: absolute;
   bottom: 15rpx;
@@ -53,29 +67,50 @@
   font-size: 35rpx;
   color: white;
 }
-/* 气泡 */
-.new-step {
 
+/* 气泡 */
+
+.pop {
   position: absolute;
-  top: 45%;
-  left: 50%;
-  margin-left: -48rpx;
-  margin-top: -48rpx;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop .pop-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.pop-item text {
+  font-size: 24rpx;
+  color: white;
+}
+
+.pop-item .pop-pop {
   width: 96rpx;
   height: 96rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.new-step image {
+
+.pop-pop image {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
-.new-step text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -20rpx;
-  margin-top: -20rpx;
+
+.pop-pop .popnumber {
+  position: relative;
   font-size: 23rpx;
   color: white;
+  text-align: center;
 }
 
 
@@ -84,6 +119,14 @@
   left: 50%;
   margin-left: -110.5rpx;
   bottom: 30rpx;
+  width: 221rpx;
+  height: 302rpx;
+}
+.top-people-tmp {
+  position: absolute;
+  left: 50%;
+  margin-left: -110.5rpx;
+  bottom: 100rpx;
   width: 221rpx;
   height: 302rpx;
 }
@@ -104,8 +147,15 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   /* background: green; */
+  background-color: white;
+}
+
+.more-item::after {
+  border: none;
+  border-radius: 0;
 }
 
 .more-item image {
@@ -160,7 +210,20 @@ swiper-item {
 }
 
 /* 列表 */
+
 .product {
   width: 100%;
   background-color: green;
+}
+
+/* 签到弹窗 */
+.sign_in_alert {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

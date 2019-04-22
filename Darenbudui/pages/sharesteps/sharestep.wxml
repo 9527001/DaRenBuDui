@@ -1,0 +1,55 @@
+<!--pages/sharesteps/sharestep.wxml-->
+<view class='main'>
+  <image class='bg' src='../../res/share/share-bg.png' mode='aspectFill'></image>
+  <view class='top'>
+    <view class='share'>
+      <view class='doublepeople'>
+        <view class='one'>
+          <image src='{{info.this_user.header}}'></image>
+          <text class='one_notes'>我的步数</text>
+          <text class='step'>{{info.this_user.step}}</text>
+        </view>
+        <view class='one'>
+          <image src='{{info.send_user.header}}'></image>
+          <text class='one_notes'>TA的总步数</text>
+          <text class='step'>{{info.send_user.step}}</text>
+        </view>
+      </view>
+      <view class='line'></view>
+      <view class='share-bottom'>
+        <view class='share-step-input'>
+          <text>互助</text>
+          <input bindinput='bindinputvalue'></input>
+          <text>步</text>
+        </view>
+        <text class='sharesteplimitnotes'>每日不能大于10000步</text>
+        <view class='shrare_confirm' bindtap='onClickAtConfirm'>确定</view>
+      </view>
+    </view>
+    <view class='goods'>
+      <view class='list'>
+        <block wx:for='{{tradeList}}' wx:key="id">
+          <!-- data-*属性在触发事件时获取  -->
+          <view class='singleTrade' hover-class='item-press' data-id='{{item.goodsId}}' data-item='{{item}}' bindtap='onClickItem'>
+            <!-- 商品图片 -->
+            <image src='{{item.img ? item.img : "../../res/activity-2.png"}}' class='img' mode='aspectFill' />
+            <!-- 商品名字 -->
+            <view class='name'>{{item.name}}</view>
+            <!-- 库存 -->
+            <view class='inventory'>剩余{{item.stock}}件</view>
+            <!-- 价格 -->
+            <view class='b'>
+              <image src='../../res/icons_06.png' class='b-icon' catchtap='deleteCollection' data-pos='{{index}}' />
+              <view class='price'>{{item.type==2 ? item.price + '币' :item.price}}</view>
+
+            </view>
+            <view class='exchange'>
+              <button bindtap="clickOnExchange">免费兑换</button>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+</view>

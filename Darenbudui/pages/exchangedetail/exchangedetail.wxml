@@ -1,5 +1,7 @@
 <!--pages/exchangedetail/exchangedetail.wxml-->
 <!-- 商品详情 -->
+<import src="../../common/wxParse/wxParse.wxml"/>
+
 <view class='main'>
 
   <!-- 图片页面 -->
@@ -26,7 +28,10 @@
   <view class='exchangerecordlist' wx:if="{{list.length>0 || info.detail}}">
     <van-tabs class='recordtitle' active="0" bind:change="onChange" animated swipeable="true" color="#00af18" z-index="0">
       <van-tab title="商品介绍">
-        <rich-text class='detail' nodes="{{info.detail}}"></rich-text>
+      <view class='detail'>
+          <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      </view>
+        <!-- <rich-text class='detail' nodes="{{info.detail}}"></rich-text> -->
       </van-tab>
       <van-tab title="兑换记录" wx:if="{{list.length>0}}">
         <view class='recordlist'>

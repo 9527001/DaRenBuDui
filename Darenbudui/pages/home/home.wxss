@@ -9,13 +9,15 @@
   width: 100%;
   height: 677rpx;
   background-color: green;
+  overflow: hidden;
 }
+
 .top-bg-scroll {
   position: absolute;
   width: 200%;
   height: 677rpx;
-
 }
+
 .top-bg-scroll image {
   position: relative;
   width: 50%;
@@ -23,7 +25,6 @@
 }
 
 /* 达人步数 */
-
 .all-step {
   position: absolute;
   left: 20rpx;
@@ -40,9 +41,13 @@
 .all-step text {
   position: absolute;
   bottom: 10rpx;
-  right: 30rpx;
+  right: 16rpx;
+  left: 80rpx;
   font-size: 35rpx;
   color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* 今日步数 */
@@ -86,6 +91,7 @@
   align-items: center;
   flex-direction: column;
 }
+
 .pop-item text {
   font-size: 24rpx;
   color: white;
@@ -113,7 +119,6 @@
   text-align: center;
 }
 
-
 .top-people {
   position: absolute;
   left: 50%;
@@ -122,6 +127,7 @@
   width: 221rpx;
   height: 302rpx;
 }
+
 .top-people-tmp {
   position: absolute;
   left: 50%;
@@ -217,6 +223,7 @@ swiper-item {
 }
 
 /* 签到弹窗 */
+
 .sign_in_alert {
   position: fixed;
   width: 100%;
@@ -226,4 +233,5 @@ swiper-item {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }

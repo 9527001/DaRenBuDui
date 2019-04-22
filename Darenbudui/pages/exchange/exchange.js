@@ -7,17 +7,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tradeList: [{
-      img: '../../res/activity-3.png',
-      name: '晴雨伞',
-      stock: '10',
-      price: '111',
-    }, {
-      img: '../../res/activity-2.png',
-      name: '纸巾/箱',
-      stock: '10',
-      price: '111',
-    }],
+    tradeList: [
+    //   {
+    //   img: '../../res/activity-3.png',
+    //   name: '晴雨伞',
+    //   stock: '10',
+    //   price: '111',
+    // }, {
+    //   img: '../../res/activity-2.png',
+    //   name: '纸巾/箱',
+    //   stock: '10',
+    //   price: '111',
+    // }
+    ],
 
   },
 

@@ -1,7 +1,7 @@
 <import src="../../pages/template/signin.wxml" />
 <view class="home">
   <block wx:if="{{!list.isSignin}}">
-    <view class='sign_in_alert'>
+    <view class='sign_in_alert' ove>
       <template is="test"> </template>
     </view>
   </block>

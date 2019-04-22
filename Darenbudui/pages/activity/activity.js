@@ -75,10 +75,6 @@ Page({
 
   onclickAd: function(event) {
     var indx = event.currentTarget.dataset.index;
-    wx.showToast({
-
-      title: event.currentTarget.dataset.cell.active_name,
-    });
     var name = event.currentTarget.dataset.cell.active_name;
     if (name == '幸运抽奖'){
       wx.navigateTo({

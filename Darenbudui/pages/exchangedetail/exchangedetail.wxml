@@ -31,10 +31,9 @@
       <view class='detail'>
           <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
       </view>
-        <!-- <rich-text class='detail' nodes="{{info.detail}}"></rich-text> -->
       </van-tab>
       <van-tab title="兑换记录" wx:if="{{list.length>0}}">
-        <view class='recordlist'>
+        <view class='recordlist' >
           <block wx:for='{{list}}'>
             <view class='orderitem'>
               <view class='order-left'>

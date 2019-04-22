@@ -50,6 +50,7 @@ page {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .core .content {
@@ -61,4 +62,5 @@ page {
   border-bottom-right-radius: 20rpx;
   border: 1rpx dashed #e5e2e6;
   box-shadow: 1px 1px 2px 2px #e5e2e6;
+  
 }

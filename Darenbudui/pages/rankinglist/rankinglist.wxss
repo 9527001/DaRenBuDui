@@ -57,7 +57,7 @@
 } 
 
 .top .content .ranking {
-  font-size: 28rpx;
+  font-size: 32rpx;
   margin-left: 32rpx;
 }
 .top .content .avtarurl {
@@ -69,7 +69,7 @@
 }
 
 .top .content .name {
-  font-size: 30rpx;
+  font-size: 32rpx;
   margin-left: 8rpx;
   margin-right: 48rpx;
 }

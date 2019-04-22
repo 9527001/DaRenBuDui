@@ -9,9 +9,10 @@ page {
 
 .main {
   width: 100%;
-  margin-bottom: 150rpx;
+  margin-bottom: 80rpx;
   background-color: #faf4fb;
   /* position: relative; */
+  overflow: scroll;
 }
 
 /* 商品轮播图 */

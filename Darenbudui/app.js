@@ -105,6 +105,7 @@ App({
       myprize: "../../pages/myprize/myprize",
       sharesteps:"../../pages/sharesteps/sharestep",
       webview:"../../pages/webview/webview",
+      rankinglistrule: "../../pages/rankinglistrule/rankinglistrule",
 
     },
     api: '../../common/netutil/API.js',

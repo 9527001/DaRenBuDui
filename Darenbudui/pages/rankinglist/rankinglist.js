@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    stepRule:'',//活动规则
     // 自己排名
     myinfo: {
       "username": "该用户暂未授权",
@@ -109,7 +110,7 @@ Page({
   // 活动规则
   onClickRule() {
     wx.navigateTo({
-      url: '../../pages/rankinglistrule/rankinglistrule',
+      url: getApp().globalData.routes.rankinglistrule + '?steprules=' + this.data.stepRule,
     })
   },
   http() {
@@ -119,6 +120,7 @@ Page({
       this.setData({
         myinfo: data.pointSelfRank,
         list: data.pointRankList,
+        stepRule: data.stepRule,
         'prizelist[0]': data.pointRankList[1],
         'prizelist[1]': data.pointRankList[0],
         'prizelist[2]': data.pointRankList[2],
